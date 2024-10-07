@@ -12,7 +12,7 @@ navbar:
     - icon: fab fa-github
       href: https://github.com/jollygoodjacob
     - icon: ai ai-google-scholar
-      href: https://scholar.google.com/citations?user=_FFdaCUAAAAJ
+      href: https://scholar.google.com/citations?user=krk3qVYAAAAJ
 output:   
   distill::distill_article:
     css: styles.css
