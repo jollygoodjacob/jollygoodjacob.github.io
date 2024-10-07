@@ -1,0 +1,18 @@
+name: "jacob-nesslage"
+title: "Jacob Nesslage"
+description: |
+  Jacob Nesslage personal page
+output_dir: "."
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - icon: fab fa-github
+      href: https://github.com/jollygoodjacob
+    - icon: ai ai-google-scholar
+      href: https://scholar.google.com/citations?user=_FFdaCUAAAAJ
+output:   
+  distill::distill_article:
+    css: styles.css
