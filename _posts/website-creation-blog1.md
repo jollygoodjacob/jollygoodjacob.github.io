@@ -1,5 +1,5 @@
 ---
-title: 'Website Creation and the Social Media Tendency'
+title: 'Website Online!'
 date: 2024-11-01
 permalink: /posts/2024/11/website-creation/
 tags:
