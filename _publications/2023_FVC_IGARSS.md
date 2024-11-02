@@ -1,7 +1,7 @@
 ---
 title: "A Machine Learning Approach for High Resolution Fractional Vegetation Cover Estimation Using Planet Cubesat and RGB Drone Data Fusion"
 collection: publications
-category: manuscripts
+category: conferences
 permalink: /publication/2023_FVC_IEEE_IGARSS
 excerpt: 'In this study, we perform data fusion of RGB drone data and multispectral cubesat data for synthetic daily high resolution fractional vegetation cover estimates.'
 date: 2023-07-16
