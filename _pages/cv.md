@@ -11,35 +11,38 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D in Environmental Systems (Emphasis: Ecology and Ecosystem Science), University of California, Merced, 2025 (expected)
+* B.S. in Environmental Engineering, University of California, Merced, 2021
+* A.S. in Physics, Modesto Junior College, 2018
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Summer 2019: Natural Resources Specialist - Air Quality
+  * USDA Natural Resources Conservation Agency (USDA-NRCS)
+  * Duties included:
+     * Supporting implementation of Farm Bill practices to reduce CO2 emissions on private lands in California.
+  * Supervisor: Ted Strauss
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Remote Sensing Data Processing
+  * Acquisition and processing of drone-based RGB, multispectral, and imaging spectroscopy data to Level-2 products
+  * Processing of LiDAR point cloud data to DTM, DSM, and CHM products
+* Drone Pilot
+  * Active FAA Part 107
+* Open-source Geospatial Analysis
+  * R
+  * Python
+  * Javascript (GEE)
+  * PyQGIS
+* ArcGIS / ESRI
+* ENVI
+* Geomatics
+  * Trimble GPS/GNSS PPK
+  * Topcon GPS/GNSS RTK
+* Numerical Ecology 
+
 
 Publications
 ======
