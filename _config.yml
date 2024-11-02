@@ -16,11 +16,7 @@ url                      : https://jollygoodjacob.github.io # the base hostname 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "jollygoodjacob/jollygoodjacob.github.io"
 
-#Theme
-plugins:
-  - jekyll-remote-theme
-remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
 
 
 
@@ -191,7 +187,7 @@ exclude:
   - README
   - tmp
   - vendor
-  - assets
+
 keep_files:
   - .git
   - .svn
