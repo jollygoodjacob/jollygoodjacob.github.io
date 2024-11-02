@@ -19,3 +19,7 @@ To gain familiarity with the statistical technique of generalized dissimilarity 
 Objectives:
 =====
 Develop an understanding of the statistical framework underpinning GDMs (i.e., matrix regression, I-splines, link functions, assumptions, and limitations). Apply GDMs to community composition datasets (Delta, vernal pools, and riparian) to analyze and describe spatial patterns of compositional turnover using remote sensing and other raster-based datasets. Explore extensions of GDMs for various purposes, such as Sparse Generalized Dissimilarity Modeling for high dimensional datasets (i.e., hyperspectral) and Multi Site Generalized Dissimilarity Modeling for zeta diversity.
+
+More Information:
+=====
+See this [link](https://github.com/jollygoodjacob/GDM_workshop), which will take you to the materials I developed for this workshop.
