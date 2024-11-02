@@ -1,7 +1,7 @@
 ---
 title: 'Website Online!'
 date: 2024-11-01
-permalink: /year-archive/2024/website-creation/
+permalink: /posts/2024/website-creation/
 tags:
   - website
   - hello world
