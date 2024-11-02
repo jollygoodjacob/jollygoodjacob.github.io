@@ -17,9 +17,6 @@ baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "jollygoodjacob/jollygoodjacob.github.io"
 
 
-remote_theme : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
