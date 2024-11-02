@@ -21,7 +21,7 @@ repository               : "jollygoodjacob/jollygoodjacob.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "myphoto.png"
+  avatar           : "myphoto.jpg"
   name             : "Jacob Nesslage"
   pronouns         : # example: "she/her"  
   bio              : "PhD Candidate | Geospatial Data Scientist | Environmental Engineer"
