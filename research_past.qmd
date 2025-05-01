@@ -1,0 +1,21 @@
+---
+title: "Past Projects"
+---
+
+::: researchcontainer
+<h1>Sensor fusion for precision agriculture applications</h1>
+
+<p>
+
+In the precision agriculture space, it is important to have timely estimates of key parameters, such as fractional vegetation cover, water stress, and productivity, which may then aid in estimation of yields and the holistic assessment of crop health. 
+
+To achieve this, remote sensing data must be recorded at the spatial, temporal, spectral, and radiometric resolutions required to obtain these parameters for crop management decisions. This presents challenges for remote sensing platforms, as photons can only be split so many ways, orbits and flight paths are often fixed, and personnel may not be able to visit sites as often as is needed.
+
+One solution is to use combinations of sensors to leverage the advantages of varying resolutions in satellites, drones, and aircraft, while mitigating tradeoffs. There are many ways to achieve this, with methods such as pansharpening, Kalman filters, or machine learning / deep learning being the most common. 
+
+The approach I took was to utilize classified drone imagery as training data for machine learning models to estimate fractional vegetation cover from Planet's CubeSat constellations.  The results of this work were published as a conference proceeding at the International Geoscience and Remote Sensing Symposium 2023 (see Publications). Members of the Earth Observation and Remote Sensing Lab (EORS) are now continuing this work with the Internet of Things for Precision Agriculture (IoT4Ag) Engineering Research Center.
+
+</p>
+
+![](imgs/Hestir_field_research_20210608-19.jpg){.imgright}
+:::
