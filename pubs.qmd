@@ -2,6 +2,9 @@
 title: "Publications"
 ---
 ::: {.researchcontainer}
+
+See my Google Scholar here: https://scholar.google.com/citations?user=krk3qVYAAAAJ&hl=en 
+
 ## Peer-Reviewed Publications
 
 -   Cardoso, A.W., Hestir, E.L., Slingsby, J.A., Forbes, C.J., Moncrieff, G.R., Turner, W., Skowno, A.L., **Nesslage, J.**, Brodrick, P.G., Gaddis, K.D. and Wilson, A.M., 2025. The biodiversity survey of the Cape (BioSCape), integrating remote sensing with biodiversity science. *npj Biodiversity*, *4*(1), p.2.
