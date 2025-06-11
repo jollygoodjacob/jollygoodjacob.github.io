@@ -5,7 +5,7 @@ toc: false
 about: 
   template: trestles
   image-shape: round
-  image-width: 18em
+  image-width: 19em
   links: 
     - text: 💼 LinkedIn
       href: https://www.linkedin.com/in/jacob-nesslage
