@@ -16,6 +16,7 @@ customIcons <- awesomeIcons(
   iconColor = "white",
   markerColor = "orange",
   library = "fa"
+
 )
 
 # Define Mediterranean region GeoJSON (Example link, replace with your actual file)
