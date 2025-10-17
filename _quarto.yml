@@ -1,7 +1,8 @@
 project:
   type: website
   output-dir: docs
-
+resources:
+    - files/CV_Nesslage.pdf
 website:
   title: "Jacob Nesslage"
   navbar:
@@ -15,7 +16,7 @@ website:
       - text: "Publications"
         href: pubs.qmd
       - text: "CV"
-        #href: cv.qmd
+        href: files/CV_Nesslage.pdf
   page-footer:
     background: "#D9EDF7"
     foreground: "#31708F"
