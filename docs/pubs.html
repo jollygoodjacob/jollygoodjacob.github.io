@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -119,17 +139,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#peer-reviewed-articles" id="toc-peer-reviewed-articles" class="nav-link active" data-scroll-target="#peer-reviewed-articles">Peer-Reviewed Articles</a></li>
-  <li><a href="#pre-prints" id="toc-pre-prints" class="nav-link" data-scroll-target="#pre-prints">Pre-prints</a></li>
-  <li><a href="#conference-paper" id="toc-conference-paper" class="nav-link" data-scroll-target="#conference-paper">Conference Paper</a></li>
-  <li><a href="#conference-proceedings-oralposter" id="toc-conference-proceedings-oralposter" class="nav-link" data-scroll-target="#conference-proceedings-oralposter">Conference Proceedings (Oral/Poster)</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -153,51 +164,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="peer-reviewed-articles" class="level2">
-<h2 class="anchored" data-anchor-id="peer-reviewed-articles">Peer-Reviewed Articles</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>You haven't cited any references in this bibliography yet.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
-</div>
-</div>
-</section>
-<section id="pre-prints" class="level2">
-<h2 class="anchored" data-anchor-id="pre-prints">Pre-prints</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>No publications found.</code></pre>
-</div>
-</div>
-</section>
-<section id="conference-paper" class="level2">
-<h2 class="anchored" data-anchor-id="conference-paper">Conference Paper</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>You haven't cited any references in this bibliography yet.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
-</div>
-</div>
-</section>
-<section id="conference-proceedings-oralposter" class="level2">
-<h2 class="anchored" data-anchor-id="conference-proceedings-oralposter">Conference Proceedings (Oral/Poster)</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>You haven't cited any references in this bibliography yet.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
-</div>
-</div>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="ref-nesslage2020using" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">J. Nesslage, E. L. Hestir, and J. Burmistrova, <span>“Using sentinel-2 to detect and predict biodiversity hotspots within a vernal pools and grasslands ecosystem,”</span> in <em>AGU fall meeting abstracts</em>, 2020, pp. B060–0021.</div>
+</div>
+<div id="ref-nesslage2022monitoring" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J. Nesslage, E. Hestir, J. Quick-Cleveland, and R. Meyer, <span>“Monitoring taxonomic and functional (agro) biodiversity along the agricultural-riparian matrix of california’s san joaquin river using remote sensing and environmental DNA,”</span> in <em>AGU fall meeting abstracts</em>, 2022, pp. B22D–1468.</div>
+</div>
+<div id="ref-nesslage2023machine" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">J. Nesslage, B. L. Barreto, A. Weingram, and E. Hestir, <span>“A machine learning approach for high resolution fractional vegetation cover estimation using planet cubesat and RGB drone data fusion,”</span> in <em>IGARSS 2023-2023 IEEE international geoscience and remote sensing symposium</em>, IEEE, 2023, pp. 4879–4882.</div>
+</div>
+<div id="ref-cardoso2023bioscape" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">A. Cardoso, E. Hestir, J. Slingsby, J. Nesslage, C. Forbes, and A. Wilson, <span>“Bioscape: Combining airborne hyperspectral and laser altimeter with field data to advance remote sensing of biodiversity,”</span> in <em>IGARSS 2023-2023 IEEE international geoscience and remote sensing symposium</em>, IEEE, 2023, pp. 499–502.</div>
+</div>
+<div id="ref-stavros2023wicked" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">E. N. Stavros <em>et al.</em>, <span>“The wicked world of fire: Water and carbon and biodiversity, oh my!”</span> in <em>AGU fall meeting abstracts</em>, 2023, pp. GC53C–01.</div>
+</div>
+<div id="ref-hayden2023biodiversity" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">M. Hayden <em>et al.</em>, <span>“Biodiversity across scales: Mapping functional diversity with remote sensing to assess scale dependencies in biodiversity monitoring,”</span> in <em>AGU fall meeting abstracts</em>, 2023, pp. B23L–02.</div>
+</div>
+<div id="ref-nesslage2024hydrologically" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">J. R. Nesslage, E. Hestir, and J. H. Viers, <span>“Hydrologically informed estimation of plant species richness across a vernal pool complex using drone-mounted LiDAR,”</span> <em>Authorea Preprints</em>. Authorea, 2024.</div>
+</div>
+<div id="ref-nesslage2024functional" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">J. Nesslage, E. L. Hestir, M. W. Rossi, R. Meyer, and E. N. Stavros, <span>“Functional process zone delineation for riverine biodiversity assessment: QGIS plugin development and case studies across two continents,”</span> in <em>AGU fall meeting abstracts</em>, 2024, pp. B14C–06.</div>
+</div>
+<div id="ref-rossi2024monitoring" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">M. W. Rossi <em>et al.</em>, <span>“Monitoring regional biodiversity using scale-normalized metrics of functional richness,”</span> in <em>AGU fall meeting abstracts</em>, 2024, pp. B11K–1458.</div>
+</div>
+<div id="ref-cardoso2025bioscape" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">A. W. Cardoso and B. C. H. E. L. 3. S. J. A. 2. 4. 5. F. C. J. 1. 2. M. G. R. 6. T. W. 7. S. A. L. 2. 8. http://orcid. org/0000-0001-9219-8365 Nesslage Jacob 5 Brodrick Philip G. 9 Gaddis Keith D. 7 Wilson Adam M. 1, <span>“BioSCape combines local knowledge and remote-sensing technology for inclusive biodiversity science,”</span> <em>Nature Reviews Biodiversity</em>, vol. 1, no. 1, pp. 2–4, 2025.</div>
+</div>
+<div id="ref-cardoso2025biodiversity" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">A. W. Cardoso <em>et al.</em>, <span>“The biodiversity survey of the cape (BioSCape), integrating remote sensing with biodiversity science,”</span> <em>npj Biodiversity</em>, vol. 4, no. 1, p. 2, 2025.</div>
+</div>
+<div id="ref-slimp2024balancing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">M. Slimp <em>et al.</em>, <span>“Balancing big data and privacy: Sharing biodiversity insights from eDNA and remote sensing across scales,”</span> in <em>AGU fall meeting abstracts</em>, 2024, pp. B11E–1375.</div>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

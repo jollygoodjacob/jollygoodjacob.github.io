@@ -8,62 +8,12 @@ format:
     theme:
       light: flatly
       dark: darkly
+csl: ieee.csl
+nocite: |
+  @*
+reference-title: false
 ---
 
 
-
-
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-library(RefManageR)
-
-
-
-# Read and filter bibliography
-bib <- ReadBib("scholar.bib")
-
-articles <- subset(bib, grepl("article", bib$keywords, ignore.case = TRUE))
-proceedings <- subset(bib, grepl("proceeding", bib$keywords, ignore.case = TRUE))
-preprints <- subset(bib, grepl("preprint", bib$keywords, ignore.case = TRUE))
-conference <- subset(bib, grepl("conference", bib$keywords, ignore.case = TRUE))
-# Clean formatter using RefManageR built-in function
-print_citations <- function(entries) {
-  if (length(entries) == 0) {
-    cat("No publications found.\n")
-  } else {
-    Cite(entries, .bibstyle = "numeric", .cite.style = "none")
-    PrintBibliography(entries)
-  }
-}
-
-
-```
-
-
-## Peer-Reviewed Articles
-
-```{r echo=FALSE}
-print_citations(articles)
-
-```
-
-## Pre-prints
-
-```{r echo=FALSE}
-print_citations(preprints)
-
-```
-
-## Conference Paper
-```{r echo=FALSE}
-print_citations(conference)
-
-```
-
-## Conference Proceedings (Oral/Poster)
-```{r echo=FALSE}
-print_citations(proceedings)
-
-```
 
 

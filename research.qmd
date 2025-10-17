@@ -9,35 +9,79 @@ about:
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(leaflet)
 library(sf)
+library(htmltools)
 
-# Custom icons for each location
 customIcons <- awesomeIcons(
   icon = "map-marker-alt",
   iconColor = "white",
   markerColor = "orange",
   library = "fa"
-
 )
 
-# Define Mediterranean region GeoJSON (Example link, replace with your actual file)
-#mediterranean_geojson <- st_read("C:/Users/jacob/Desktop/website/Website/data/mediterranean_regions.geojson")
-
-# Create Leaflet map
 m <- leaflet() %>%
-  addProviderTiles(providers$Esri.NatGeoWorldMap) %>%  # Satellite imagery
-  addAwesomeMarkers(lng = 18.861, lat = -33.986, popup = "Berg River, South Africa", icon = customIcons) %>%
-  addAwesomeMarkers(lng = 18.946042, lat = -33.977875, popup = "Eerste River, South Africa", icon = customIcons) %>%
-  addAwesomeMarkers(lng = -120.366, lat = 37.243, popup = "Merced Vernal Pools and Grasslands Reserve", icon = customIcons) %>%
-  addAwesomeMarkers(lng = -121.175705, lat = 37.573927, popup = " Grayson Riverbend Preserve (Part of Dos Rios State Park), California", icon = customIcons) %>%
-  addAwesomeMarkers(lng = -123.006, lat = 38.508, popup = "Russian River, California", icon = customIcons) %>%
-  addAwesomeMarkers(lng = -121.440734, lat = 38.265969, popup = " Cosumnes River Preserve, California", icon = customIcons) #%>%
+  addProviderTiles(providers$Esri.WorldImagery, group = "Satellite") %>%
+  addProviderTiles(providers$Esri.WorldTopoMap, group = "Topographic") %>%
+  fitBounds(lng1 = -123.5, lat1 = -34.5, lng2 = 19.5, lat2 = 39) %>%
 
+  # Add markers
+  addAwesomeMarkers(
+    lng = 18.861, lat = -33.986,
+    popup = "Berg River, South Africa",
+    label = "Berg River",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
+  addAwesomeMarkers(
+    lng = 18.946042, lat = -33.977875,
+    popup = "Eerste River Watershed, South Africa",
+    label = "Eerste River",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
+  addAwesomeMarkers(
+    lng = -120.366, lat = 37.243,
+    popup = "Merced Vernal Pools and Grasslands Reserve, Merced, CA, USA",
+    label = "Merced Vernal Pools",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
+  addAwesomeMarkers(
+    lng = -121.175705, lat = 37.573927,
+    popup = "Grayson Riverbend Preserve, Grayson, CA, USA",
+    label = "Grayson Riverbend Preserve",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
+  addAwesomeMarkers(
+    lng = -123.006, lat = 38.508,
+    popup = "Russian River Watershed, CA, USA",
+    label = "Russian River Watershed",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
+  addAwesomeMarkers(
+    lng = -121.440734, lat = 38.265969,
+    popup = "Cosumnes River Preserve, CA, USA",
+    label = "Cosumnes River Preserve",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
 
-# Load Mediterranean climate regions from GeoJSON
- # addPolygons(data = mediterranean_geojson, color = "#FF5733", weight = 2, fillOpacity = 0.3)
-# Display map
+  # Add controls
+  addLayersControl(
+    baseGroups = c("Satellite", "Topographic"),
+    overlayGroups = c("Sites"),
+    options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addScaleBar(position = "bottomleft") %>%
+  addMiniMap(toggleDisplay = TRUE) %>%
+  addLegend(position = "bottomright", colors = "orange", labels = "Research Sites", title = "Legend")
+
 m
+
 ```
+
+
 
 ## Research projects
 
