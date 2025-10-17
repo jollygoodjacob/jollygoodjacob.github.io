@@ -1,23 +1,69 @@
 ---
 title: "Publications"
+bibliography: scholar.bib
+format:
+  html:
+    toc: true
+    css: styles.css
+    theme:
+      light: flatly
+      dark: darkly
 ---
-::: {.researchcontainer}
 
-See my Google Scholar here: https://scholar.google.com/citations?user=krk3qVYAAAAJ&hl=en 
 
-## Peer-Reviewed Publications
 
--   Cardoso, A.W., Hestir, E.L., Slingsby, J.A., Forbes, C.J., Moncrieff, G.R., Turner, W., Skowno, A.L., **Nesslage, J.**, Brodrick, P.G., Gaddis, K.D. and Wilson, A.M., 2025. The biodiversity survey of the Cape (BioSCape), integrating remote sensing with biodiversity science. *npj Biodiversity*, *4*(1), p.2.
 
--   Cardoso, A.W,Hestir, E.L., Slingsby, J.A., Forbes, C.J., Moncrieff, G.R., Turner, W., Skowno, A.L., **Nesslage, J.**, Brodrick, P.G., Gaddis, K.D. and Wilson, A.M., 2025. BioSCape combines local knowledge and remote-sensing technology for inclusive biodiversity science. *Nature Reviews Biodiversity*, *1*(1), pp.2-4.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(RefManageR)
+
+
+
+# Read and filter bibliography
+bib <- ReadBib("scholar.bib")
+
+articles <- subset(bib, grepl("article", bib$keywords, ignore.case = TRUE))
+proceedings <- subset(bib, grepl("proceeding", bib$keywords, ignore.case = TRUE))
+preprints <- subset(bib, grepl("preprint", bib$keywords, ignore.case = TRUE))
+conference <- subset(bib, grepl("conference", bib$keywords, ignore.case = TRUE))
+# Clean formatter using RefManageR built-in function
+print_citations <- function(entries) {
+  if (length(entries) == 0) {
+    cat("No publications found.\n")
+  } else {
+    Cite(entries, .bibstyle = "numeric", .cite.style = "none")
+    PrintBibliography(entries)
+  }
+}
+
+
+```
+
+
+## Peer-Reviewed Articles
+
+```{r echo=FALSE}
+print_citations(articles)
+
+```
 
 ## Pre-prints
 
--   **Nesslage, J.R.**, Hestir, E. and Viers, J.H., 2024. Hydrologically informed estimation of plant species richness across a vernal pool complex using drone-mounted LiDAR. *Authorea Preprints*.
+```{r echo=FALSE}
+print_citations(preprints)
 
-## Conference Proceedings
+```
 
--   **Nesslage, J**., Barreto, B.L., Weingram, A. and Hestir, E., 2023, July. A machine learning approach for high resolution fractional vegetation cover estimation using planet cubesat and RGB drone data fusion. In *IGARSS 2023-2023 IEEE International Geoscience and Remote Sensing Symposium* (pp. 4879-4882). IEEE.
+## Conference Paper
+```{r echo=FALSE}
+print_citations(conference)
 
--   Cardoso, A., Hestir, E., Slingsby, J., **Nesslage, J.**, Forbes, C. and Wilson, A., 2023, July. Bioscape: Combining Airborne Hyperspectral and Laser Altimeter with Field Data to Advance Remote Sensing of Biodiversity. In *IGARSS 2023-2023 IEEE International Geoscience and Remote Sensing Symposium* (pp. 499-502). IEEE.
-:::
+```
+
+## Conference Proceedings (Oral/Poster)
+```{r echo=FALSE}
+print_citations(proceedings)
+
+```
+
+

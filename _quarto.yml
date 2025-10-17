@@ -5,8 +5,8 @@ project:
 website:
   title: "Jacob Nesslage"
   navbar:
-    background: "#2C7FB8" # aquatic blue navbar
-    foreground: "#FFFFFF"
+    background: "#f7cd46" # aquatic blue navbar
+    foreground: "#5ac3b0"
     left:
       - text: "Home"
         href: index.qmd
@@ -17,8 +17,8 @@ website:
       - text: "CV"
         #href: cv.qmd
   page-footer:
-    background: "#D9EDF7"
-    foreground: "#31708F"
+    background: "#de5935"
+    foreground: "#5ac3b0"
     left:  "© 2025, Jacob Nesslage"
     right: Built using [GitHub](https://github.com/jollygoodjacob), [R](https://www.r-project.org/), and [Quarto](https://quarto.org/).
 
@@ -26,6 +26,7 @@ website:
 
 format:
   html:
+    bibliography: scholar.bib
     theme:
       light: flatly
       dark: darkly
