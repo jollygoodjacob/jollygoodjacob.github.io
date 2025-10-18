@@ -5,9 +5,6 @@ format:
   html:
     toc: true
     css: styles.css
-    theme:
-      light: flatly
-      dark: darkly
 csl: ieee.csl
 nocite: |
   @*

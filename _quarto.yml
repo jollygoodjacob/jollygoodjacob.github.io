@@ -9,17 +9,17 @@ website:
     background: "#2C7FB8" # aquatic blue navbar
     foreground: "#FFFFFF"
     left:
-      - text: "Home"
+      - text: "About"
         href: index.qmd
       - text: "Research"
         href: research.qmd
       - text: "Publications"
         href: pubs.qmd
-      - text: "CV"
+      - text: "Curriculum Vitae"
         href: files/CV_Nesslage.pdf
   page-footer:
-    background: "#D9EDF7"
-    foreground: "#31708F"
+    #background: "#D9EDF7"
+   # foreground: "#31708F"
     left:  "© 2025, Jacob Nesslage"
     right: Built using [GitHub](https://github.com/jollygoodjacob), [R](https://www.r-project.org/), and [Quarto](https://quarto.org/).
 
@@ -28,9 +28,7 @@ website:
 format:
   html:
     bibliography: scholar.bib
-    theme:
-      light: flatly
-      dark: darkly
+    theme: cyborg
     css: styles.css
     toc: true
 

@@ -1,7 +1,6 @@
 ---
 title: "Current Research"
-about: 
-  template: solana
+
 ---
 
 ## Dissertation Research Sites
