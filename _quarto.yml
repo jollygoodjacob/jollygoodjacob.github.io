@@ -13,8 +13,8 @@ website:
         href: index.qmd
       - text: "Research"
         href: research.qmd
-      - text: "Publications"
-        href: pubs.qmd
+     # - text: "Publications"
+     #   href: pubs.qmd
       - text: "Curriculum Vitae"
         href: files/CV_Nesslage.pdf
   page-footer:
