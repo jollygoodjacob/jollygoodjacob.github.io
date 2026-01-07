@@ -1,0 +1,166 @@
+---
+title: "Projects"
+---
+
+## Interactive Map of Research Sites
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(leaflet)
+library(sf)
+library(htmltools)
+
+customIcons <- awesomeIcons(
+  icon = "map-marker-alt",
+  iconColor = "white",
+  markerColor = "orange",
+  library = "fa"
+)
+
+m <- leaflet() %>%
+  addProviderTiles(providers$Esri.WorldImagery, group = "Satellite") %>%
+  addProviderTiles(providers$Esri.WorldTopoMap, group = "Topographic") %>%
+  fitBounds(lng1 = -123.5, lat1 = -34.5, lng2 = 19.5, lat2 = 39) %>%
+
+  # Add markers
+  addAwesomeMarkers(
+    lng = 18.861, lat = -33.986,
+    popup = "Berg River Watershed, South Africa",
+    label = "Berg River",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
+  addAwesomeMarkers(
+    lng = 18.946042, lat = -33.977875,
+    popup = "Eerste River Watershed, South Africa",
+    label = "Eerste River",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
+  addAwesomeMarkers(
+    lng = -120.366, lat = 37.243,
+    popup = "Merced Vernal Pools and Grasslands Reserve, Merced, CA, USA",
+    label = "Merced Vernal Pools",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
+  addAwesomeMarkers(
+    lng = -121.175705, lat = 37.573927,
+    popup = "Grayson Riverbend Preserve, Grayson, CA, USA",
+    label = "Grayson Riverbend Preserve",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
+  addAwesomeMarkers(
+    lng = -123.006, lat = 38.508,
+    popup = "Russian River Watershed, CA, USA",
+    label = "Russian River Watershed",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
+  addAwesomeMarkers(
+    lng = -121.440734, lat = 38.265969,
+    popup = "Cosumnes River Preserve, CA, USA",
+    label = "Cosumnes River Preserve",
+    icon = customIcons,
+    group = "Sites"
+  ) %>%
+
+  # Add controls
+  addLayersControl(
+    baseGroups = c("Satellite", "Topographic"),
+    overlayGroups = c("Sites"),
+    options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addScaleBar(position = "bottomleft") %>%
+  addMiniMap(toggleDisplay = TRUE) %>%
+  addLegend(position = "bottomright", colors = "orange", labels = "Research Sites", title = "Legend")
+
+m
+
+```
+
+## Dissertation Research Projects
+
+::: researchcontainer
+### Ch. 1: Hydrologically informed estimation of plant species richness in vernal pools using UAV-LiDAR
+
+::: {.columns .v-center}
+::: {.column width="40%"}
+![Merced Vernal Pools and Grasslands Reserve in full bloom (April 2024).](imgs/vernal_pools.jpg){width="100%"}
+:::
+
+::: {.column width="60%"}
+Hydrology strongly structures plant communities in wetlands, but its effects are difficult to quantify in ephemeral systems such as vernal pools, where water movement and retention vary rapidly at fine spatial scales. These dynamics are typically unresolved by satellite remote sensing, limiting long-term ecological monitoring.
+
+To address this challenge, I used drone-mounted LiDAR to generate high-resolution (1 m) digital elevation models over vernal pool complexes and derived hydrologic proxies related to hydroperiod, connectivity, and soil moisture. These variables were used to model total plant species richness, as well as forb and grass richness. The resulting models predicted richness within 2--3 species, highlighting the potential of drone-based LiDAR to fill monitoring gaps where intensive field surveys are impractical.
+:::
+:::
+:::
+
+::: researchcontainer
+### Ch. 2: Biodiversity monitoring on floodplain ecosystems using remote sensing and multi-locus metabarcoding
+
+::: {.columns .v-center}
+::: {.column width="60%"}
+Groundwater regulation in California's San Joaquin Valley is expected to result in the fallowing of up to 500,000 acres of agricultural land, creating substantial land-use change with uncertain ecological consequences. While hydrologic and economic impacts have been widely studied, biodiversity responses remain poorly understood, particularly where fallowed lands intersect remnant or restored riparian habitats.
+
+Working with collaborators at UC Santa Cruz and UC Merced, I combine remote sensing with multi-locus eDNA metabarcoding to assess biodiversity across these mixed agricultural--riparian mosaics. Remote sensing captures ecosystem structure and vegetation dynamics, while eDNA provides community-level information on taxa that are otherwise invisible to optical sensors. Together, these approaches offer an integrated view of ecosystem structure, function, and biological diversity.
+:::
+
+::: {.column width="40%"}
+![As part of my work on floodplains, I collected water quality and eDNA data for the [PNNL's](https://www.pnnl.gov) [WHONDRS consortium](https://www.pnnl.gov/projects/WHONDRS). This picture is of a sample collection at the Grayson Riverbend Preserve on the San Joaquin River, CA.](imgs/JN_sampling.jpg){width="100%"}
+:::
+:::
+:::
+
+::: researchcontainer
+### Ch. 3: OpenRES: A QGIS plugin for automated extraction of hydrogeomorphic features to support functional process zone classification of river networks
+
+::: {.columns .v-center}
+::: {.column width="40%"}
+![3D representation of a river valley in the Eerste River watershed (South Africa), showing the river channel (blue) and valley floor and microshed boundaries used by OpenRES for hydrogeomorphic classification.](imgs/Eerste.png){width="100%"}
+:::
+
+::: {.column width="60%"}
+Functional process zones (FPZs) --- hydrogeomorphic units defined at valley-to-reach scales---provide a powerful framework for understanding riverine biodiversity patterns across watersheds. FPZs integrate hydroclimate, geology, and channel--valley morphology, capturing spatial heterogeneity that is often poorly explained by continuum-based river models.
+
+Despite their utility, FPZs remain underused due to reliance on outdated or unsupported spatial tools and the lack of open-source alternatives. To address this gap, I have developed [OpenRES](https://github.com/jollygoodjacob/OpenRES), an open-source QGIS plugin that automates extraction of hydrogeomorphic metrics from remote sensing data and supports classification of river segments into FPZs. This tool underpins key components of my dissertation research and supports collaborative work with the BioSCape campaign.
+:::
+:::
+:::
+
+
+
+## Collaborations and Other Projects
+
+::: researchcontainer
+### NASA BioSCape Campaign: Biodiversity Across Scales
+
+::: {.columns .v-center}
+::: {.column width="60%"}
+I am working with collaborators from the University of Colorado Boulder and the University of California, Santa Cruz on a project within NASA's first biodiversity-focused airborne observation campaign (BioSCape). This work examines phylogenetic, taxonomic, and functional biodiversity across connected freshwater--marine watersheds along the Berg and Eerste Rivers in South Africa's Greater Cape Floristic Region.
+
+Our goal is to improve biodiversity mapping by clarifying how functional diversity relates to phylogenetic and taxonomic diversity across space and time. We integrate environmental DNA (eDNA), traditional field surveys, and airborne remote sensing, drawing on insights from Mediterranean-climate watersheds in California to evaluate how these observation methods complement one another across spatial and temporal scales.
+:::
+
+::: {.column width="40%"}
+![Benthic macroinvertebrate inventory collection within the headwaters of the Berg River, Jonkershoek Nature Reserve, South Africa. This image was taken by Jeremy Shelton of Fishwater Films for an upcoming documentary on NASA's Biodiversity Survey of the Cape (BioSCape) campaign.](imgs/Berg_SA_macroinverts.JPG){width="100%"}
+:::
+:::
+:::
+
+::: researchcontainer
+### Internet of Things for Precison Agriculture (US NSF IoT4Ag): Sensor fusion for precision agriculture applications
+
+::: {.columns .v-center}
+::: {.column width="40%"}
+![Calibration of a drone-based imaging spectrometer (Headwall Hyperspec-Nano mounted to a DJI M600) for a summer field campaign over the IoT4Ag pistachio orchard testbed in 2022.](imgs/Hestir_field_research_20210608-19.jpg){width="100%"}
+:::
+
+::: {.column width="60%"}
+Precision agriculture requires timely, spatially detailed estimates of key variables such as vegetation cover, water stress, and productivity. No single remote sensing platform can simultaneously provide the spatial, temporal, spectral, and radiometric resolution needed for these applications, creating inherent tradeoffs.
+
+To overcome these limitations, I have been developing sensor fusion approaches that combine information from satellites, drones, and aircraft. In particular, I used classified drone imagery as training data for machine-learning models to estimate fractional vegetation cover from Planet CubeSat imagery. This work was published as a conference proceeding at IGARSS 2023, and is now being extended by members of the Earth Observation and Remote Sensing Lab in collaboration with the IoT4Ag Engineering Research Center.
+:::
+:::
+:::

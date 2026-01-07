@@ -9,12 +9,8 @@ website:
     background: "#2C7FB8" # aquatic blue navbar
     foreground: "#FFFFFF"
     left:
-      - text: "About"
-        href: index.qmd
-      - text: "Research"
-        href: research.qmd
-     # - text: "Publications"
-     #   href: pubs.qmd
+      - text: "Research Projects"
+        href: projects.qmd
       - text: "Curriculum Vitae"
         href: files/CV_Nesslage.pdf
   page-footer:
