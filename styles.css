@@ -4,7 +4,7 @@
 }
 
 .researchcontainer {
-  animation: fadeIn 1.5s ease-in-out;
+  animation: fadeIn 2.5s ease-in-out;
 }
 
 .banner {
@@ -44,25 +44,25 @@ body[class*="page-"] {
 /* Strong black gradient overlay + per-page image */
 body.page-about {
   background-image:
-    linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
     url("imgs/backgrounds/about.jpg");
 }
 
 body.page-research {
   background-image:
-    linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
     url("imgs/backgrounds/research.jpg");
 }
 
 body.page-map {
   background-image:
-    linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
     url("imgs/backgrounds/map.jpg");
 }
 
 /* Quarto main content container — selectors vary slightly by theme */
 main.content {
-  background: rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.2);
   border-radius: 18px;
   padding: 1.25rem 1.25rem;
 }

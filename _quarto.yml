@@ -18,7 +18,7 @@ website:
   page-footer:
     #background: "#D9EDF7"
    # foreground: "#31708F"
-    left:  "© 2025, Jacob Nesslage"
+    left:  "© 2026, Jacob Nesslage"
     right: Built using [GitHub](https://github.com/jollygoodjacob), [R](https://www.r-project.org/), and [Quarto](https://quarto.org/).
 
       
