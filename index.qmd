@@ -30,6 +30,7 @@ I’m a **Ph.D. Candidate** in the **Environmental Systems Graduate Group** at t
 
 My background is in **environmental engineering**, **spatial ecology**, and **remote sensing**.
 
+
 ## Research Focus
 
 ### Biodiversity at the Terrestrial-Aquatic Interface
@@ -41,6 +42,8 @@ A growing area of my research involves spatiotemporal data fusion, particularly 
 ### Open Data Science and Tools
 
 I’m a strong advocate for open-source geospatial science, reproducible workflows, and transparent methods. Much of my work centers on building modular tools for QGIS, Python, and R — including OpenRES, an open-source QGIS plugin for automated hydrogeomorphic feature extraction.
+
+
 :::
 
 

@@ -11,6 +11,8 @@ website:
     left:
       - text: "Research Projects"
         href: projects.qmd
+      - text: "Interactive Map"
+        href: map.qmd
       - text: "Curriculum Vitae"
         href: files/CV_Nesslage.pdf
   page-footer:

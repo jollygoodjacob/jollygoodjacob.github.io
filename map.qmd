@@ -3,83 +3,153 @@ title: "Where My Research Takes Me"
 format: html
 editor: visual
 ---
-As an open-source GIS enthusiast, I thought it would be fun to create a map of all the places I have conducted research, as well as all of the places I have been fortunate enough to travel to for conferences, workshops, and colloquia.
+
+As an open-source GIS enthusiast, I thought it would be fun to create an interactive map of all the places I have conducted research, as well as all of the places I have been fortunate enough to travel to for conferences, workshops, and colloquia.
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(leaflet)
-library(sf)
-library(htmltools)
+library(dplyr)
 
-customIcons <- awesomeIcons(
-  icon = "map-marker-alt",
-  iconColor = "white",
-  markerColor = "orange",
-  library = "fa"
+# -------------------------
+# Data
+# -------------------------
+sites <- tibble::tribble(
+  ~name, ~popup, ~lng, ~lat,
+  "Berg River", "Berg River Watershed, South Africa", 18.861, -33.986,
+  "Eerste River", "Eerste River Watershed, South Africa", 18.946042, -33.977875,
+  "Merced Vernal Pools", "Merced Vernal Pools and Grasslands Reserve, Merced, CA, USA", -120.366, 37.243,
+  "Grayson Riverbend Preserve", "Grayson Riverbend Preserve, Grayson, CA, USA", -121.175705, 37.573927,
+  "Russian River Watershed", "Russian River Watershed, CA, USA", -123.006, 38.508,
+  "Cosumnes River Preserve", "Cosumnes River Preserve, CA, USA", -121.440734, 38.265969
 )
 
+confs <- tibble::tribble(
+  ~name, ~popup, ~lng, ~lat, ~year,
+  "Washington, D.C. (AGU24)", "AGU24 — Washington, D.C. (Oral)", -77.0369, 38.9072, 2024,
+  "Davis, CA", "Labor and Automation in California Agriculture Annual Meeting — UC Davis (Poster)", -121.7405, 38.5449, 2024,
+  "Long Beach, CA (ESA)", "ESA Annual Meeting — Long Beach, CA (Poster)", -118.1937, 33.7701, 2024,
+  "College Park, MD", "NASA CCE Joint Science Workshop — University of Maryland (Poster)", -76.9378, 38.9897, 2023,
+  "Chicago, IL", "AGU Fall Meeting 2022 — Chicago, IL (Poster)", -87.6298, 41.8781, 2022,
+  "Montreal, QC", "ESA Annual Meeting 2022 — Montreal, QC", -73.5673, 45.5019, 2022,
+  "Fresno, CA", "FIRA 2022 — Fresno, CA (Poster)", -119.7871, 36.7378, 2022,
+  "West Lafayette, IN", "IoT for Precision Agriculture Annual Meeting — Purdue University, West Lafayette, IN", -86.9081, 40.4259, 2022,
+  "San Francisco, CA", "AGU Annual Symposium 2020 — San Francisco, CA (Poster)", -122.4194, 37.7749, 2020,
+  "Philadelphia, PA", "IoT4Ag Annual Meeting 2025 — Philadelphia, PA", -75.1652, 39.9526, 2025,
+  "Brisbane, AU", "IGARSS 2025 — Brisbane, Australia", 153.0251, -27.4698, 2025,
+  "Houw Hoek, ZA", "NASA BioSCape Joint Science Workshop 2023 — Houw Hoek, South Africa", 18.4017, -34.0500, 2023
+)
+
+inst <- tibble::tibble(
+  name  = "University of California Merced",
+  popup = "University of California, Merced (Home Institution)",
+  lng   = -120.4319402,
+  lat   =  37.3633252
+)
+
+# -------------------------
+# Styling
+# -------------------------
+site_hex <- "#d95f02"
+conf_hex <- "#7570b3"
+inst_hex <- "#1b9e77"
+
+sites <- sites %>% mutate(radius = 7)
+confs <- confs %>%
+  mutate(radius = case_when(
+    year >= 2025 ~ 8,
+    year == 2024 ~ 7,
+    year == 2023 ~ 6,
+    TRUE ~ 5
+  ))
+inst <- inst %>% mutate(radius = 8)
+
+# -------------------------
+# Map
+# -------------------------
 m <- leaflet() %>%
+  # Recommended basemaps
   addProviderTiles(providers$Esri.WorldImagery, group = "Satellite") %>%
-  addProviderTiles(providers$Esri.WorldTopoMap, group = "Topographic") %>%
+  addProviderTiles(providers$OpenTopoMap,        group = "Terrain (OpenTopo)") %>%
+  addProviderTiles(providers$CartoDB.Positron,   group = "Light (Clean)") %>%
+  addProviderTiles(providers$Esri.WorldTopoMap,  group = "Topo (Reference)") %>%
+
+  # Hillshade overlay
+  addProviderTiles(
+    providers$Esri.WorldShadedRelief,
+    group = "Hillshade",
+    options = providerTileOptions(opacity = 0.55)
+  ) %>%
+
   fitBounds(lng1 = -123.5, lat1 = -34.5, lng2 = 19.5, lat2 = 39) %>%
 
-  # Add markers
-  addAwesomeMarkers(
-    lng = 18.861, lat = -33.986,
-    popup = "Berg River, South Africa",
-    label = "Berg River",
-    icon = customIcons,
-    group = "Sites"
-  ) %>%
-  addAwesomeMarkers(
-    lng = 18.946042, lat = -33.977875,
-    popup = "Eerste River Watershed, South Africa",
-    label = "Eerste River",
-    icon = customIcons,
-    group = "Sites"
-  ) %>%
-  addAwesomeMarkers(
-    lng = -120.366, lat = 37.243,
-    popup = "Merced Vernal Pools and Grasslands Reserve, Merced, CA, USA",
-    label = "Merced Vernal Pools",
-    icon = customIcons,
-    group = "Sites"
-  ) %>%
-  addAwesomeMarkers(
-    lng = -121.175705, lat = 37.573927,
-    popup = "Grayson Riverbend Preserve, Grayson, CA, USA",
-    label = "Grayson Riverbend Preserve",
-    icon = customIcons,
-    group = "Sites"
-  ) %>%
-  addAwesomeMarkers(
-    lng = -123.006, lat = 38.508,
-    popup = "Russian River Watershed, CA, USA",
-    label = "Russian River Watershed",
-    icon = customIcons,
-    group = "Sites"
-  ) %>%
-  addAwesomeMarkers(
-    lng = -121.440734, lat = 38.265969,
-    popup = "Cosumnes River Preserve, CA, USA",
-    label = "Cosumnes River Preserve",
-    icon = customIcons,
-    group = "Sites"
+  # Research Sites
+  addCircleMarkers(
+    data = sites,
+    lng = ~lng, lat = ~lat,
+    popup = ~popup,
+    label = ~name,
+    radius = ~radius,
+    stroke = TRUE, color = site_hex, weight = 2,
+    fillColor = site_hex, fillOpacity = 0.85,
+    group = "Research Sites"
   ) %>%
 
-  # Add controls
+  # Conference Travel
+  addCircleMarkers(
+    data = confs,
+    lng = ~lng, lat = ~lat,
+    popup = ~popup,
+    label = ~name,
+    radius = ~radius,
+    stroke = TRUE, color = conf_hex, weight = 2,
+    fillColor = conf_hex, fillOpacity = 0.85,
+    group = "Conference Travel"
+  ) %>%
+
+  # Home Institution
+  addCircleMarkers(
+    data = inst,
+    lng = ~lng, lat = ~lat,
+    popup = ~popup,
+    label = ~name,
+    radius = ~radius,
+    stroke = TRUE, color = inst_hex, weight = 2,
+    fillColor = inst_hex, fillOpacity = 0.90,
+    group = "Home Institution"
+  ) %>%
+
   addLayersControl(
-    baseGroups = c("Satellite", "Topographic"),
-    overlayGroups = c("Sites"),
+    baseGroups = c(
+      "Satellite",
+      "Terrain (OpenTopo)",
+      "Light (Clean)",
+      "Topo (Reference)"
+    ),
+    overlayGroups = c(
+      "Hillshade",
+      "Research Sites",
+      "Conference Travel",
+      "Home Institution"
+    ),
     options = layersControlOptions(collapsed = FALSE)
   ) %>%
+
   addScaleBar(position = "bottomleft") %>%
   addMiniMap(toggleDisplay = TRUE) %>%
-  addLegend(position = "bottomright", colors = "orange", labels = "Research Sites", title = "Legend")
+
+  addLegend(
+    position = "bottomleft",
+    colors = c(site_hex, conf_hex, inst_hex),
+    labels = c("Research Sites", "Conference Travel", "Home Institution (UC Merced)"),
+    title = "Legend",
+    opacity = 1
+  )
 
 m
 
-```
 
+
+```
 
 
