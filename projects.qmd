@@ -1,5 +1,6 @@
 ---
 title: "Research Projects"
+body-classes: page-research
 ---
 
 ## Dissertation Research Projects

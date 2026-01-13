@@ -2,6 +2,7 @@
 title: "Jacob Nesslage"
 image: imgs/Site_photo.jpg
 toc: false
+body-classes: page-about
 about: 
   template: trestles
   image-shape: round

@@ -2,10 +2,10 @@
 title: "Where My Research Takes Me"
 format: html
 editor: visual
+body-classes: page-map
 ---
 
 As an open-source GIS enthusiast, I thought it would be fun to create an interactive map of all the places I have conducted research, as well as all of the places I have been fortunate enough to travel to for conferences, workshops, and colloquia.
-
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(leaflet)
@@ -69,10 +69,11 @@ inst <- inst %>% mutate(radius = 8)
 # -------------------------
 m <- leaflet() %>%
   # Recommended basemaps
-  addProviderTiles(providers$Esri.WorldImagery, group = "Satellite") %>%
-  addProviderTiles(providers$OpenTopoMap,        group = "Terrain (OpenTopo)") %>%
-  addProviderTiles(providers$CartoDB.Positron,   group = "Light (Clean)") %>%
-  addProviderTiles(providers$Esri.WorldTopoMap,  group = "Topo (Reference)") %>%
+  addProviderTiles(providers$Esri.WorldImagery, group = "Esri World Imagery") %>%
+  addProviderTiles(providers$Esri.WorldTopoMap,  group = "Esri World Topo") %>%
+  addProviderTiles(providers$OpenTopoMap,        group = "Open Topography") %>%
+  addProviderTiles(providers$CartoDB.Positron,   group = "CartoDB Positron") %>%
+  
 
   # Hillshade overlay
   addProviderTiles(
@@ -121,10 +122,10 @@ m <- leaflet() %>%
 
   addLayersControl(
     baseGroups = c(
-      "Satellite",
-      "Terrain (OpenTopo)",
-      "Light (Clean)",
-      "Topo (Reference)"
+      "Esri World Imagery",
+      "Esri World Topo",
+      "Open Topography",
+      "CartoDB Positron"
     ),
     overlayGroups = c(
       "Hillshade",
@@ -151,5 +152,3 @@ m
 
 
 ```
-
-

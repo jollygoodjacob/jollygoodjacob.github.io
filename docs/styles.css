@@ -32,3 +32,39 @@
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
+
+/* Base background behavior for ALL pages that use page-* classes */
+body[class*="page-"] {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; /* optional; remove on mobile if janky */
+}
+
+/* Strong black gradient overlay + per-page image */
+body.page-about {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+    url("imgs/backgrounds/about.jpg");
+}
+
+body.page-research {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+    url("imgs/backgrounds/research.jpg");
+}
+
+body.page-map {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+    url("imgs/backgrounds/map.jpg");
+}
+
+/* Quarto main content container — selectors vary slightly by theme */
+main.content {
+  background: rgba(255,255,255,0.1);
+  border-radius: 18px;
+  padding: 1.25rem 1.25rem;
+}
+
+/* If you use dark text on light cards, this works great with the black gradient */
