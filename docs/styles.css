@@ -60,6 +60,12 @@ body.page-map {
     url("imgs/backgrounds/map.jpg");
 }
 
+body.page-teaching {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("imgs/backgrounds/teaching.jpg");
+}
+
 /* Quarto main content container — selectors vary slightly by theme */
 main.content {
   background: rgba(0,0,0,0.2);

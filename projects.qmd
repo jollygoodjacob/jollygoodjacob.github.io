@@ -1,7 +1,9 @@
 ---
-title: "Research Projects"
+title: "Research"
 body-classes: page-research
 ---
+
+My research asks how spatial structure shapes biodiversity across landscapes. I integrate remote sensing, field ecology, and computational methods to quantify the links between geomorphology, hydrology, and biological communities in dynamic systems such as wetlands and river networks. By combining emerging technologies—UAV-LiDAR, airborne and satellite imagery, environmental DNA, and open-source geospatial tools—I aim to develop scalable, reproducible approaches for understanding and monitoring ecological change.
 
 ## Dissertation Research Projects
 
@@ -10,7 +12,7 @@ body-classes: page-research
 
 ::: {.columns .v-center}
 ::: {.column width="40%"}
-![Merced Vernal Pools and Grasslands Reserve in full bloom (April 2024).](imgs/vernal_pools.jpg){width="100%"}
+![Merced Vernal Pools and Grasslands Reserve in full bloom (April 2024), one of California’s largest remaining intact vernal pool landscapes and a globally significant hotspot of endemic wetland biodiversity.](imgs/vernal_pool.png){width="100%"}
 :::
 
 ::: {.column width="60%"}

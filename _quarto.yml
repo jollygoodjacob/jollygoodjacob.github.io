@@ -6,18 +6,20 @@ resources:
 website:
   title: "Jacob Nesslage"
   navbar:
-    background: "#2C7FB8" # aquatic blue navbar
+    background: "#256A99" # aquatic blue navbar
     foreground: "#FFFFFF"
     left:
-      - text: "Research Projects"
+      - text: "Research"
         href: projects.qmd
+      - text: "Teaching"
+        href: teaching.qmd
       - text: "Interactive Map"
         href: map.qmd
       - text: "Curriculum Vitae"
         href: files/CV_Nesslage.pdf
   page-footer:
-    #background: "#D9EDF7"
-   # foreground: "#31708F"
+    background: "#256A99"
+    foreground: "#FFFFFF"
     left:  "© 2026, Jacob Nesslage"
     right: Built using [GitHub](https://github.com/jollygoodjacob), [R](https://www.r-project.org/), and [Quarto](https://quarto.org/).
 

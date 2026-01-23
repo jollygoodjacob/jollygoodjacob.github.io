@@ -4,6 +4,7 @@ format: html
 editor: visual
 body-classes: page-map
 ---
+
 ::: researchcontainer
 As an open-source GIS enthusiast, I thought it would be fun to create an interactive map of all the places I have conducted research, as well as all of the places I have been fortunate enough to travel to for conferences, workshops, and colloquia.
 

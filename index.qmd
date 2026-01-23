@@ -27,22 +27,16 @@ about:
 ::: researchcontainer
 ## About Me
 
-I’m a **Ph.D. Candidate** in the **Environmental Systems Graduate Group** at the **University of California, Merced**. I conduct research in the Earth Observation and Remote Sensing (EORS) Lab (PI: Dr. Erin Hestir). My work sits at the intersection of remote sensing, ecology, and open data science.
+I’m a **Ph.D. Candidate** in the **Environmental Systems Graduate Group** at the **University of California, Merced**. I conduct research in the Earth Observation and Remote Sensing (EORS) Lab (PI: Dr. Erin Hestir). 
 
 My background is in **environmental engineering**, **spatial ecology**, and **remote sensing**.
 
+I am interested in how landscape structure organizes biodiversity. Using remote sensing, GIS, and spatial modeling, I link hydrology and geomorphology to ecological patterns across dynamic environments.
 
-## Research Focus
+I am particularly drawn to dynamic environments that occur at the terrestrial-aquatic interface, such as floodplains, river corridors, and ephemeral wetlands, where small changes in elevation or connectivity can reorganize entire communities. These systems demand tools that operate across scales, from microtopography measured by drone-based LiDAR to watershed-scale classification of river networks.
 
-### Biodiversity at the Terrestrial-Aquatic Interface
-My dissertation research leverages multi-scale remote sensing — from satellites, drones, and aircraft — combined with in-situ biodiversity surveys and environmental DNA (eDNA) from soils, sediments, and water. Together, these datasets help me assess, monitor, and model biodiversity across dynamic terrestrial–aquatic interfaces. I am especially interested in how hydrology and geomorphology shape biodiversity and ecosystem services, focusing on floodplains, river corridors, and ephemeral wetlands — the transitional zones where life and water converge.
-
-### Spatiotemporal Data Fusion
-A growing area of my research involves spatiotemporal data fusion, particularly for combining satellite and UAV imagery to generate synthetic fine-resolution time series. These approaches have applications in precision agriculture, environmental monitoring, and other domains where high spatial and temporal resolution are essential.
-
-### Open Data Science and Tools
-
-I’m a strong advocate for open-source geospatial science, reproducible workflows, and transparent methods. Much of my work centers on building modular tools for QGIS, Python, and R — including OpenRES, an open-source QGIS plugin for automated hydrogeomorphic feature extraction.
+More broadly, I am motivated by a central question:
+How can we observe ecological change at the spatial and temporal scales at which it actually occurs?
 
 
 :::
