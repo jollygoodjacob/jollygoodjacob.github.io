@@ -31,9 +31,9 @@ I’m a **Ph.D. Candidate** in the **Environmental Systems Graduate Group** at t
 
 My background is in **environmental engineering**, **spatial ecology**, and **remote sensing**.
 
-I am interested in how landscape structure organizes biodiversity. Using remote sensing, GIS, and spatial modeling, I link hydrology and geomorphology to ecological patterns across dynamic environments.
+I am interested in how landscape structure organizes biodiversity. Using remote sensing, GIS, and spatial modeling, I link hydrology and geomorphology to ecological patterns across dynamic ecosystems.
 
-I am particularly drawn to dynamic environments that occur at the terrestrial-aquatic interface, such as floodplains, river corridors, and ephemeral wetlands, where small changes in elevation or connectivity can reorganize entire communities. These systems demand tools that operate across scales, from microtopography measured by drone-based LiDAR to watershed-scale classification of river networks.
+I am particularly drawn to dynamic ecosystems that occur at the terrestrial-aquatic interface, such as floodplains, river corridors, and ephemeral wetlands, where small changes in elevation or connectivity can reorganize entire communities. These systems demand tools that operate across scales, from microtopography measured by drone-based LiDAR to watershed scale classification of river networks.
 
 More broadly, I am motivated by a central question:
 How can we observe ecological change at the spatial and temporal scales at which it actually occurs?
