@@ -2,9 +2,9 @@
 title: "Research"
 body-classes: page-research
 ---
-
+::: researchcontainer
 My research asks how spatial structure shapes biodiversity across landscapes. I integrate remote sensing, field ecology, and computational methods to quantify the links between geomorphology, hydrology, and biological communities in dynamic systems such as wetlands and river networks. By combining emerging technologies—UAV-LiDAR, airborne and satellite imagery, environmental DNA, and open-source geospatial tools—I aim to develop scalable, reproducible approaches for understanding and monitoring ecological change.
-
+:::
 ## Dissertation Research Projects
 
 ::: researchcontainer
