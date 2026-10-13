@@ -1,0 +1,36 @@
+---
+format:
+  typst:
+    papersize: us-letter
+    margin:
+      x: 0.85in
+      y: 0.75in
+    fontsize: 10pt
+    mainfont: "Libertinus Serif"
+    output-file: CV_Nesslage.pdf
+    include-before-body:
+      - text: |
+          #show heading: it => block(above: 1.2em, below: 0.7em)[
+            #text(size: 11pt, weight: "bold", fill: rgb("#1c3029"), upper(it.body))
+            #v(-0.6em)
+            #line(length: 100%, stroke: 0.6pt + rgb("#3f8f82"))
+          ]
+          #show link: set text(fill: rgb("#2f6f66"))
+          #set list(indent: 0.6em)
+          #set enum(indent: 0.2em)
+filters:
+  - cv-dates.lua
+toc: false
+---
+
+```{=typst}
+#align(center)[
+  #text(size: 20pt, weight: "bold")[Jacob R. Nesslage] \
+  #v(0.2em)
+  #text(size: 10.5pt)[Postdoctoral Scholar, eDNA Explorer Inc. · Visiting Scientist, University of California, Santa Cruz] \
+  #v(0.1em)
+  #text(size: 9.5pt)[#link("mailto:jacob@ednaexplorer.org")[jacob\@ednaexplorer.org] · #link("https://jollygoodjacob.github.io")[jollygoodjacob.github.io] · #link("https://github.com/jollygoodjacob")[github.com/jollygoodjacob] · ORCID #link("https://orcid.org/0000-0001-9219-8365")[0000-0001-9219-8365]]
+]
+```
+
+{{< include _cv-body.qmd >}}

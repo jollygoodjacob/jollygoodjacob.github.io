@@ -321,3 +321,37 @@ body.page-about {
   font-size: 0.85rem;
   color: var(--river) !important;
 }
+
+/* ---------- CV page ---------- */
+.cv-header { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; }
+.cv-header p { margin: 0; }
+.cv-download {
+  background: var(--fynbos) !important;
+  color: var(--forest-900) !important;
+  border: none !important;
+  font-weight: 600;
+  border-radius: 999px !important;
+  padding: 0.4rem 1.1rem !important;
+}
+.cv-download:hover { filter: brightness(1.08); }
+.page-cv .cv-entry {
+  border-left: 2px solid rgba(108, 195, 180, 0.35);
+  padding: 0.1rem 0 0.1rem 1rem;
+  margin: 0 0 1.1rem 0;
+}
+.page-cv .cv-entry p { margin-bottom: 0.25rem; }
+.page-cv .cv-entry ul { margin: 0.35rem 0 0 0; color: var(--lichen); font-size: 0.95rem; }
+.cv-date {
+  float: right;
+  margin-left: 1rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--fynbos);
+}
+.page-cv .cv-pubs ol { padding-left: 1.4rem; }
+.page-cv .cv-pubs li { margin-bottom: 0.65rem; color: var(--mist); }
+.page-cv .cv-pubs li::marker { color: var(--lichen); font-family: "IBM Plex Mono", monospace; font-size: 0.85em; }
+@media (max-width: 767.98px) {
+  .cv-date { float: none; display: block; margin: 0 0 0.15rem 0; }
+}

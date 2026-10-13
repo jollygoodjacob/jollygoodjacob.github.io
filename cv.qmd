@@ -1,0 +1,16 @@
+---
+title: "Curriculum Vitae"
+subtitle: "Postdoctoral Scholar, eDNA Explorer Inc. · Visiting Scientist, UC Santa Cruz"
+title-block-banner: imgs/web/banner-research.jpg
+toc: true
+toc-depth: 2
+body-classes: page-cv
+---
+
+::: {.researchcontainer .lead-card .cv-header}
+[Download PDF](files/CV_Nesslage.pdf){.btn .cv-download}
+
+[jacob@ednaexplorer.org](mailto:jacob@ednaexplorer.org) · [jollygoodjacob.github.io](https://jollygoodjacob.github.io) · [GitHub](https://github.com/jollygoodjacob) · [ORCID 0000-0001-9219-8365](https://orcid.org/0000-0001-9219-8365)
+:::
+
+{{< include _cv-body.qmd >}}

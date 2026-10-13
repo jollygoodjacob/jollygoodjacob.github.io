@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!cv-pdf.qmd"
   resources:
     - files/CV_Nesslage.pdf
     - imgs/web/contours.svg
@@ -22,7 +25,7 @@ website:
       - text: "Interactive Map"
         href: map.qmd
       - text: "Curriculum Vitae"
-        href: files/CV_Nesslage.pdf
+        href: cv.qmd
   page-footer:
     left: "© 2026, Jacob Nesslage"
     right: Built using [GitHub](https://github.com/jollygoodjacob), [R](https://www.r-project.org/), and [Quarto](https://quarto.org/).

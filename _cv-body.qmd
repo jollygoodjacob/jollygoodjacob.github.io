@@ -1,0 +1,264 @@
+## Education
+
+::: cv-entry
+**Ph.D., Environmental Systems** [2026]{.cv-date}\
+University of California, Merced · Emphasis: Ecology and Ecosystem Science\
+*Dissertation:* Biodiversity at the Terrestrial-Aquatic Interface: Quantification Through Integrated Earth Observation and Multi-Modal Biodiversity Surveys\
+*Advisor:* Dr. Erin L. Hestir · *Committee:* Dr. Joshua H. Viers, Dr. Rachel S. Meyer, Dr. Teamrat A. Ghezzehei
+:::
+
+::: cv-entry
+**B.S., Environmental Engineering**, *magna cum laude* [2021]{.cv-date}\
+University of California, Merced
+:::
+
+::: cv-entry
+**A.S., Physics** [2018]{.cv-date}\
+Modesto Junior College
+:::
+
+## Appointments
+
+::: cv-entry
+**Postdoctoral Scholar** [2026–present]{.cv-date}\
+eDNA Explorer Inc.
+:::
+
+::: cv-entry
+**Visiting Scientist** [2026–present]{.cv-date}\
+University of California, Santa Cruz
+:::
+
+## Research Experience
+
+::: cv-entry
+**Graduate Student Researcher** [2021–2026]{.cv-date}\
+University of California, Merced · Advisor: Dr. Erin L. Hestir
+
+- Collected RGB, multispectral, and hyperspectral data in terrestrial and aquatic environments using field spectrometers and UAVs
+- Conducted field surveys and analysis of eDNA, soil, water, and plant samples
+- Built GIS workflows in ArcGIS and QGIS and developed the OpenRES QGIS plugin
+- Developed R, Python, JavaScript, and Bash tools to process large remote sensing datasets, perform statistical modeling, and develop sensor-fusion algorithms
+:::
+
+::: cv-entry
+**Undergraduate Remote Sensing and GIS Research Assistant** [2020–2021]{.cv-date}\
+University of California, Merced · Advisor: Dr. Erin L. Hestir
+
+- Assisted with UAV collection of hyperspectral imagery and LiDAR, field spectroradiometry, and water sampling
+- Developed R and Python scripts for remote sensing data processing
+:::
+
+::: cv-entry
+**Natural Resources Specialist** [2019]{.cv-date}\
+USDA Natural Resources Conservation Service · Supervisor: Ted Strauss, State Air Quality Conservationist
+
+- Supported voluntary incentive programs helping landowners reduce emissions of ozone precursors, particulate matter, and greenhouse gases
+- Quantified program outcomes under the State Implementation Plan and reported results to CalEPA
+:::
+
+::: cv-entry
+**Instructional Laboratory Assistant** [2019]{.cv-date}\
+University of California, Merced · Supervisor: Dr. Luke Reed
+
+- Supported engineering capstone and graduate projects with 3D printing, laser cutting, CNC, and injection molding
+- Maintained laboratory experiments in circuits, fluid mechanics, materials, sensors and actuators, and mechatronics
+:::
+
+## Peer-Reviewed Publications
+
+::: cv-pubs
+1. **Nesslage, J.R.**, Hestir, E.L., and Viers, J.H. (2026). Plant species richness responses to microtopography across a vernal pool complex revealed by UAV-LiDAR. *Environmental Research: Ecology*, 5(1).
+2. Hayden, M.T., Rossi, M.W., Dee, L.E., Kovach, K., Amaral, C.H., **Nesslage, J.**, Slimp, M., Meyer, R.S., and Stavros, E.N. (2026). Scale dependence in remotely sensed biodiversity: Leveraging continental-scale imaging spectroscopy from the National Ecological Observatory Network. *Remote Sensing in Ecology and Conservation*.
+3. Cardoso, A.W., Hestir, E.L., Slingsby, J.A., Forbes, C.J., Moncrieff, G.R., Turner, W., Skowno, A.L., **Nesslage, J.**, Brodrick, P.G., Gaddis, K.D., and Wilson, A.M. (2025). The biodiversity survey of the Cape (BioSCape), integrating remote sensing with biodiversity science. *npj Biodiversity*, 4(1), 2.
+4. Cardoso, A.W., Hestir, E.L., Slingsby, J.A., Forbes, C.J., Moncrieff, G.R., Turner, W., Skowno, A.L., **Nesslage, J.**, Brodrick, P.G., Gaddis, K.D., and Wilson, A.M. (2025). BioSCape combines local knowledge and remote-sensing technology for inclusive biodiversity science. *Nature Reviews Biodiversity*, 1(1), 2–4.
+:::
+
+## Peer-Reviewed Conference Papers
+
+::: cv-pubs
+1. **Nesslage, J.**, Barreto, B.L., Weingram, A., and Hestir, E. (2023). A machine learning approach for high resolution fractional vegetation cover estimation using Planet CubeSat and RGB drone data fusion. In *IGARSS 2023 – IEEE International Geoscience and Remote Sensing Symposium* (pp. 4879–4882). IEEE.
+2. Cardoso, A., Hestir, E., Slingsby, J., **Nesslage, J.**, Forbes, C., and Wilson, A. (2023). BioSCape: Combining airborne hyperspectral and laser altimeter with field data to advance remote sensing of biodiversity. In *IGARSS 2023 – IEEE International Geoscience and Remote Sensing Symposium* (pp. 499–502). IEEE.
+:::
+
+## Submitted and In Preparation
+
+::: cv-pubs
+1. **Nesslage, J.R.** and Hestir, E.L. Open Riverine Ecosystem Synthesis (OpenRES): A QGIS plugin for automated extraction of hydrogeomorphic features to support Functional Process Zone classification of river networks. *Submitted to Journal of Open Source Software.*
+2. Li, L., Wang, Z., **Nesslage, J.R.**, and Zhang, B. Mitigating bias in biodiversity patterns using deep learning. *Submitted to Ecological Monographs.*
+3. **Nesslage, J.R.**, Quick-Cleveland, J., Meyer, R.S., Viers, J.H., and Hestir, E.L. Soil-based eDNA metabarcoding and remote sensing elucidates baseline diversity and habitat preferences of multiple ecological communities across a multi-benefit floodplain restoration site. *In preparation.*
+4. **Nesslage, J.R.**, Meyer, R.S., Worth, A., Newcomer, M., and Hestir, E.L. Functional Process Zones quantify hydrogeomorphic organization of Mediterranean-montane river benthic macroinvertebrate communities: Comparison across conventional and molecular survey. *In preparation.*
+:::
+
+## Software
+
+::: cv-pubs
+1. **Nesslage, J.** (2026). ShinyFPZ: An R Shiny app to aid in Functional Process Zone classification (v1.0.0). Zenodo. License: MIT.
+2. **Nesslage, J.** (2026). STFuse: A Python package for spatiotemporal fusion of remote sensing imagery. Private repository (pending invention disclosure, UC Case No. C-2026-619-1).
+3. **Nesslage, J.** and Hestir, E. (2025). [OpenRES](https://github.com/jollygoodjacob/OpenRES) (Open Riverine Ecosystem Synthesis): A QGIS plugin for automated extraction of hydrogeomorphic features to support functional process zone classification of river networks. Zenodo. License: GPL-3.0.
+:::
+
+## Grants, Fellowships, and Awards
+
+::: cv-entry
+**Group Achievement Award, BioSCape Airborne Remote Sensing Observation Team** [2024–2025]{.cv-date}\
+National Aeronautics and Space Administration (NASA)
+:::
+
+::: cv-entry
+**University of California President's Pre-Professoriate Fellowship (UC-PPFP)** [2024–2025]{.cv-date}\
+University of California Office of the President · \$37,000 + \$10,000 stipend
+:::
+
+::: cv-entry
+**National Science Foundation Graduate Research Fellowship (NSF-GRFP)** [2021–2024]{.cv-date}\
+U.S. National Science Foundation · \$132,000
+:::
+
+::: cv-entry
+**Environmental Systems Summer Fellowship** [2025]{.cv-date}\
+University of California, Merced · \$8,500
+:::
+
+::: cv-entry
+**Environmental Systems Travel Award** [2022]{.cv-date}\
+University of California, Merced · \$1,000
+:::
+
+::: cv-entry
+**Calvin E. Bright Engineering Scholarship** [2021]{.cv-date}\
+University of California, Merced · \$3,000
+:::
+
+::: cv-entry
+**UC Merced Renewable Energy Scholarship** [2019, 2020]{.cv-date}\
+University of California, Merced · \$1,500
+:::
+
+::: cv-entry
+**John Elia Veterans Scholarship** [2019, 2020]{.cv-date}\
+University of California, Merced · \$2,000
+:::
+
+::: cv-entry
+**Francis E. Benton Scholarship** [2019, 2020]{.cv-date}\
+University of California, Merced · \$1,000
+:::
+
+::: cv-entry
+**Peter & Rochelle Koch Scholarship** [2018]{.cv-date}\
+Valley Land Alliance · \$500
+:::
+
+## Conference Presentations
+
+::: cv-pubs
+1. **Nesslage, J.**, Adepoju, S., and Hestir, E. (2026). Spatiotemporal fusion of drone and satellite imagery: Validation and optimization for row and tree crops. Internet of Things for Precision Agriculture Annual Meeting, Purdue University, West Lafayette, IN. *(Flash talk)*
+2. **Nesslage, J.**, Adepoju, S., Dilmurat, K., and Hestir, E. (2025). Spatiotemporal fusion of commercial SmallSat and drone imagery using spectral unmixing and weighting-based algorithms. Internet of Things for Precision Agriculture NSF Site Visit, Pennsylvania State University, Philadelphia, PA. *(Poster)*
+3. **Nesslage, J.**, Devarasetty, A., Adepoju, S., Dilmurat, K., and Hestir, E. (2025). Parameterization of unmixing and weighting-based spatiotemporal fusion methods using PlanetScope and UAV imagery. Internet of Things for Precision Agriculture Annual Meeting, Pennsylvania State University, Philadelphia, PA. *(Flash talk)*
+4. **Nesslage, J.**, Hestir, E.L., Rossi, M.W., Meyer, R., and Stavros, E.N. (2024). Functional Process Zone delineation for riverine biodiversity assessment: QGIS plugin development and case studies across two continents. AGU24, Washington, D.C. *(Oral)*
+5. **Nesslage, J.**, Quick-Cleveland, J., Meyer, R.S., Hestir, E.L., and Viers, J.H. (2024). Riparian patches as refugia within floodplain agroecosystems: Insights from two Central Valley case studies. Labor and Automation in California Agriculture Annual Meeting, University of California, Davis. *(Poster)*
+6. **Nesslage, J.** and Hestir, E.L. (2024). Estimating plant species richness in an ephemeral wetland using UAV-LiDAR derived hydrologic and topographic data and machine learning. Ecological Society of America Annual Meeting, Long Beach, CA. *(Poster)*
+7. **Nesslage, J.** (2024). Estimating vernal pool plant diversity using remote sensing. Merced Vernal Pools and Grassland Reserve 10th Anniversary & Science Symposium, Merced, CA. *(Invited talk)*
+8. **Nesslage, J.**, Quick-Cleveland, J., Meyer, R.S., Hestir, E.L., and Viers, J.H. (2023). Monitoring Mediterranean floodplain restoration using multi-sensor fusion and environmental DNA. NASA Carbon Cycle and Ecosystems Joint Science Workshop, University of Maryland, College Park, MD. *(Poster)*
+9. **Nesslage, J.**, Hestir, E., Quick-Cleveland, J., and Meyer, R. (2022). Monitoring taxonomic and functional (agro)biodiversity along the agricultural-riparian matrix of California's San Joaquin River using remote sensing and environmental DNA. AGU Fall Meeting, Chicago, IL (B22D-1468). *(Poster)*
+10. **Nesslage, J.**, Quick-Cleveland, J., Meyer, R.S., Hestir, E.L., and Viers, J.H. (2022). Using eDNA and remote sensing to quantify species diversity, functional diversity, and their environmental drivers along an agricultural-riparian gradient. Ecological Society of America Annual Meeting, Montreal, QC. *(Poster)*
+11. **Nesslage, J.**, Quick-Cleveland, J., Meyer, R.S., Hestir, E.L., and Viers, J.H. (2022). Functional agrobiodiversity monitoring using environmental DNA and remote sensing data fusion. FIRA 2022, Fresno, CA. *(Poster)*
+12. **Nesslage, J.**, Fortier, M., and Hestir, E. (2022). A life cycle assessment of UAV remote sensing platforms. Internet of Things for Precision Agriculture Annual Meeting, Purdue University, West Lafayette, IN. *(Poster)*
+13. **Nesslage, J.**, Arizpe Arroyo, D., and Hestir, E. (2022). Sensor fusion for multiscale applications: Case studies and future directions. Internet of Things for Precision Agriculture Annual Meeting, Purdue University, West Lafayette, IN. *(Poster; third place, poster competition)*
+14. **Nesslage, J.**, Hestir, E., and Burmistrova, J. (2020). Using Sentinel-2 to detect and predict biodiversity hotspots in a vernal pools and grasslands ecosystem. American Geophysical Union Annual Symposium, San Francisco, CA. *(Poster)*
+:::
+
+## Teaching Experience
+
+::: cv-entry
+**Guest Lecturer, Proximal and Remote Sensing Technologies for Soil and Plant Sciences** [Fall 2025]{.cv-date}\
+Fresno State University (Instructor of Record: Dr. Sharon Benes) · Remote sensing of biodiversity in vernal pools and floodplains
+:::
+
+::: cv-entry
+**Guest Lecturer, ENGR 180: Spatial Analysis and Modeling** [Fall 2025]{.cv-date}\
+University of California, Merced (Instructor of Record: Dr. Erin Hestir) · Remote sensing of biodiversity in vernal pools and floodplains
+:::
+
+::: cv-entry
+**Teaching Assistant, ENGR 180: Spatial Analysis and Modeling** [Spring 2025]{.cv-date}\
+University of California, Merced (Instructor of Record: Dr. Crystal Kolden) · GIS fundamentals, spatial modeling, and ArcGIS proficiency
+:::
+
+::: cv-entry
+**Guest Lecturer, ENGR 180: Spatial Analysis and Modeling** [Fall 2024]{.cv-date}\
+University of California, Merced (Instructor of Record: Dr. Erin Hestir) · Remote sensing of biodiversity
+:::
+
+::: cv-entry
+**Course Co-Creator, ES 292: Introduction to Bayesian Statistics for Environmental Systems** [Spring 2024]{.cv-date}\
+University of California, Merced (Instructor of Record: Dr. Erin Hestir) · Bayesian statistics and modeling using R and Stan
+:::
+
+::: cv-entry
+**Instructor, Generalized Dissimilarity Modeling Workshop** [Summer 2023]{.cv-date}\
+University of California, Merced · One-week intensive workshop on generalized dissimilarity modeling in R
+:::
+
+::: cv-entry
+**Guest Lecturer, ENVE 152: Remote Sensing of the Environment** [Fall 2022]{.cv-date}\
+University of California, Merced (Instructor of Record: Dr. Erin Hestir) · Remote sensing of biodiversity
+:::
+
+::: cv-entry
+**Guest Lecturer, Bobcat Summer Academy** [Summer 2022]{.cv-date}\
+University of California, Merced · Using remote sensing to study environmental problems, for a 5th-grade audience
+:::
+
+::: cv-entry
+**Guest Lecturer, ME 190: Novel Technologies in Agriculture** [Fall 2021]{.cv-date}\
+University of California, Merced (Instructor of Record: Dr. Reza Ehsani) · UAV remote sensing for agricultural problems
+:::
+
+## Certifications
+
+::: cv-entry
+**Engineer-in-Training (EIT)**, CA Environmental Engineering, No. 187843 [2026]{.cv-date}\
+California Board for Professional Engineers, Land Surveyors, and Geologists
+:::
+
+::: cv-entry
+**NASA Open Science 101** [2025]{.cv-date}\
+National Aeronautics and Space Administration
+:::
+
+::: cv-entry
+**Motorboat Operator** [2021]{.cv-date}\
+Scientific Boating Safety Association, UC Davis Bodega Marine Lab
+:::
+
+::: cv-entry
+**Part 107 sUAS Remote Pilot** [2021]{.cv-date}\
+Federal Aviation Administration
+:::
+
+## Skills
+
+- **GIS:** QGIS, ArcGIS, GRASS GIS
+- **Remote sensing image analysis:** ENVI, SNAP, ACOLITE, UgCS, Pix4D, OpenDroneMap
+- **Programming:** Proficient in R, Python, and Unix shell; literate in JavaScript
+- **Drone/UAV operations:** DJI Phantom 4 Pro, DJI Matrice 300, DJI Matrice 600
+- **Surveying equipment:** Topcon and Trimble GPS systems; Topcon terrestrial LiDAR
+
+## Professional Memberships
+
+- IEEE Geoscience and Remote Sensing Society
+- American Geophysical Union
+- Ecological Society of America
+
+## Military Service
+
+::: cv-entry
+**Healthcare Specialist / Medic (68W)** [2011–2014]{.cv-date}\
+3d Cavalry Regiment, U.S. Army · Fort Hood, TX
+
+- Provided medical care in acute and non-acute situations to military personnel in clinical and field settings
+- Taught Combat Lifesaver courses to deploying personnel
+- Led a three-person team in evacuation operations, providing first-responder support for training exercises and range operations
+:::
