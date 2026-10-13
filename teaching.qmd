@@ -1,8 +1,10 @@
 ---
 title: "Teaching"
+subtitle: "Geospatial science as both a conceptual and practical discipline."
+title-block-banner: imgs/web/banner-teaching.jpg
 body-classes: page-teaching
 ---
-::: researchcontainer
+::: {.researchcontainer .lead-card}
 I approach teaching geospatial science as both a conceptual and practical discipline that links spatial theory to real world environmental problem solving. My goal is to help students move beyond software proficiency to understand how spatial data are generated, structured, and interpreted, and how those choices shape scientific inference.
 :::
 
@@ -10,14 +12,15 @@ I approach teaching geospatial science as both a conceptual and practical discip
 
 
 ::: researchcontainer
+[Teaching Assistant · Spring 2025]{.eyebrow}
+
 ### ENGR 180: Spatial Analysis and Modeling
-**Teaching Assistant (Spring 2025)**
 
 University of California, Merced (Instructor of Record: Dr. Crystal Kolden)
 
 ::: {.columns .v-center}
 ::: {.column width="40%"}
-![](imgs/GISlayers.png){width="100%"}
+![](imgs/web/gis_layers.png){width="100%"}
 :::
 
 ::: {.column width="60%"}
@@ -33,8 +36,9 @@ Through hands-on experience with GIS, GPS/GNSS, aerial and satellite imagery, dr
 :::
 
 ::: researchcontainer
+[Course Co-designer · Spring 2024]{.eyebrow}
+
 ### ES 292: Introduction to Bayesian Statistics
-**Course Co-designer (Spring 2024)**
 
 University of California, Merced (Instructor of Record: Dr. Erin Hestir)
 
@@ -46,7 +50,7 @@ This 2-unit course served as an accessible and practical introduction for gradua
 :::
 
 ::: {.column width="40%"}
-![](imgs/statistical_rethinking.jpg){width="80%"}
+![](imgs/web/statistical_rethinking.jpg){width="80%"}
 :::
 :::
 :::
@@ -54,13 +58,15 @@ This 2-unit course served as an accessible and practical introduction for gradua
 ## Guest Lectures
 
 ::: researchcontainer
-### Guest Lecturer, Bobcat Summer Academy
+[Guest Lecturer]{.eyebrow}
+
+### Bobcat Summer STEM Academy
 
 University of California, Merced
 
 ::: {.columns .v-center}
 ::: {.column width="40%"}
-![](imgs/bobcat.jpeg){width="100%"}
+![](imgs/web/bobcat.jpg){width="100%"}
 :::
 
 ::: {.column width="60%"}
@@ -70,7 +76,9 @@ Bobcat Summer STEM Academy (BSA) offers an exciting lineup of two-day, three-day
 :::
 
 ::: researchcontainer
-### Guest Lecturer, ME 190: Novel Technologies in Agriculture
+[Guest Lecturer]{.eyebrow}
+
+### ME 190: Novel Technologies in Agriculture
 
 University of California, Merced (Instructor of Record: Dr. Reza Ehsani)
 
@@ -80,7 +88,7 @@ Introduces the principle of operation and application of novel sensor systems fo
 :::
 
 ::: {.column width="40%"}
-![](imgs/Hestir_field_research_20210608-33.jpg){width="100%"}
+![](imgs/web/drone_field.jpg){width="100%"}
 :::
 :::
 :::
@@ -88,11 +96,13 @@ Introduces the principle of operation and application of novel sensor systems fo
 ## Workshops
 
 ::: researchcontainer
-### Generalized Dissimilarity Modeling Workshop
+[Workshop]{.eyebrow}
+
+### Generalized Dissimilarity Modeling
 
 ::: {.columns .v-center}
 ::: {.column width="40%"}
-![](imgs/GDM_spline_example.png){width="100%"}
+![](imgs/web/gdm_spline.png){width="100%"}
 :::
 
 ::: {.column width="60%"}

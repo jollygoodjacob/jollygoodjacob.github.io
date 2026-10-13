@@ -1,29 +1,59 @@
 ---
 title: "Where My Research Takes Me"
-format: html
-editor: visual
+subtitle: "Field sites, watersheds, conferences, and institutions on one map."
+title-block-banner: imgs/web/banner-map.jpg
+toc: false
 body-classes: page-map
 ---
 
-::: researchcontainer
-As an open-source GIS enthusiast, I thought it would be fun to create an interactive map of all the places I have conducted research, as well as all of the places I have been fortunate enough to travel to for conferences, workshops, and colloquia.
+::: {.researchcontainer .lead-card}
+As an open-source GIS enthusiast, I thought it would be fun to create an interactive map of all the places I have conducted research, as well as all of the places I have been fortunate enough to travel to for conferences, workshops, and colloquia. Use the buttons on the left to jump between regions, and click a field site to read about the project behind it.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(leaflet)
 library(dplyr)
 
 # -------------------------
+# Helpers
+# -------------------------
+# Popup card: optional photo, title, description, optional link to the Research page
+popup_card <- function(title, desc, img = NA, link = NA) {
+  paste0(
+    "<div class='map-pop'>",
+    ifelse(is.na(img), "", paste0("<img src='", img, "' alt=''>")),
+    "<div class='map-pop-title'>", title, "</div>",
+    "<div class='map-pop-desc'>", desc, "</div>",
+    ifelse(is.na(link), "",
+           paste0("<a class='map-pop-link' href='", link, "'>Read about this project &rarr;</a>")),
+    "</div>"
+  )
+}
+
+# -------------------------
 # Data
 # -------------------------
 sites <- tibble::tribble(
-  ~name, ~popup, ~lng, ~lat,
-  "Berg River", "Berg River Watershed, South Africa", 18.861, -33.986,
-  "Eerste River", "Eerste River Watershed, South Africa", 18.946042, -33.977875,
-  "Merced Vernal Pools", "Merced Vernal Pools and Grasslands Reserve, Merced, CA, USA", -120.366, 37.243,
-  "Grayson Riverbend Preserve", "Grayson Riverbend Preserve, Grayson, CA, USA", -121.175705, 37.573927,
-  "Russian River Watershed", "Russian River Watershed, CA, USA", -123.006, 38.508,
-  "Cosumnes River Preserve", "Cosumnes River Preserve, CA, USA", -121.440734, 38.265969
-)
+  ~name, ~desc, ~lng, ~lat, ~img, ~link,
+  "Merced Vernal Pools and Grassland Reserve",
+    "Drone LiDAR and plant surveys of vernal pool hydrology and species richness (Dissertation Ch. 1).",
+    -120.405, 37.395, "imgs/web/vernal_pool.jpg", "projects.html#vernal-pools",
+  "Grayson Riverbend Preserve",
+    "eDNA and water-quality sampling on the San Joaquin River floodplain (Dissertation Ch. 2).",
+    -121.175705, 37.573927, "imgs/web/jn_sampling.jpg", "projects.html#floodplains",
+  "Cosumnes River Preserve",
+    "Floodplain field site, Cosumnes River, CA.",
+    -121.440734, 38.265969, NA, NA,
+  "Russian River Watershed",
+    "Mediterranean-climate watershed, Sonoma and Mendocino Counties, CA.",
+    -123.006, 38.508, NA, NA,
+  "Berg River Watershed",
+    "NASA BioSCape biodiversity sampling, Greater Cape Floristic Region, South Africa.",
+    19.050, -33.905, "imgs/web/berg_macroinverts.jpg", "projects.html#bioscape",
+  "Eerste River Watershed",
+    "NASA BioSCape sampling and OpenRES river classification (Dissertation Ch. 3).",
+    18.946042, -33.977875, "imgs/web/eerste.jpg", "projects.html#openres"
+) %>%
+  mutate(popup = popup_card(name, desc, img, link), radius = 8)
 
 confs <- tibble::tribble(
   ~name, ~popup, ~lng, ~lat, ~year,
@@ -38,89 +68,120 @@ confs <- tibble::tribble(
   "San Francisco, CA", "AGU Annual Symposium 2020 — San Francisco, CA (Poster)", -122.4194, 37.7749, 2020,
   "Philadelphia, PA", "IoT4Ag Annual Meeting 2025 — Philadelphia, PA", -75.1652, 39.9526, 2025,
   "Brisbane, AU", "IGARSS 2025 — Brisbane, Australia", 153.0251, -27.4698, 2025,
-  "Houw Hoek, ZA", "NASA BioSCape Joint Science Workshop 2023 — Houw Hoek, South Africa", 18.4017, -34.0500, 2023
+  "Houw Hoek, ZA", "NASA BioSCape Joint Science Workshop 2023 — Houw Hoek, South Africa", 19.1509, -34.2052, 2023
+) %>%
+  mutate(
+    popup = popup_card(name, popup),
+    radius = case_when(year >= 2025 ~ 7, year == 2024 ~ 6, year == 2023 ~ 5.5, TRUE ~ 5)
+  )
+
+inst <- tibble::tribble(
+  ~name, ~desc, ~lng, ~lat,
+  "UC Santa Cruz", "University of California, Santa Cruz — Visiting Scientist", -122.0609, 36.9914,
+  "UC Merced", "University of California, Merced — Ph.D., Environmental Systems", -120.4319402, 37.3633252
+) %>%
+  mutate(popup = popup_card(name, desc), radius = 8)
+
+# -------------------------
+# Watershed outlines
+# Delineated from each river's outlet with the Global Watersheds API
+# (mghydro.com, MERIT-Hydro). Downloaded once at render time and cached in
+# data/watersheds/. Delete a file there to re-download it.
+# -------------------------
+ws_dir <- "data/watersheds"
+dir.create(ws_dir, recursive = TRUE, showWarnings = FALSE)
+
+watersheds <- tibble::tribble(
+  ~name, ~file, ~outlet_lat, ~outlet_lng,
+  "Russian River Watershed", "russian_river.geojson", 38.4535, -123.1170,
+  "Berg River Watershed",    "berg_river.geojson",   -32.7900,  18.1800,
+  "Eerste River Watershed",  "eerste_river.geojson", -34.0700,  18.7600
 )
 
-inst <- tibble::tibble(
-  name  = "University of California Merced",
-  popup = "University of California, Merced (Home Institution)",
-  lng   = -120.4319402,
-  lat   =  37.3633252
-)
+read_watershed <- function(name, file, outlet_lat, outlet_lng) {
+  path <- file.path(ws_dir, file)
+  if (!file.exists(path)) {
+    url <- sprintf(
+      "https://mghydro.com/app/watershed_api?lat=%s&lng=%s&precision=low&simplify=true",
+      outlet_lat, outlet_lng
+    )
+    try(download.file(url, path, quiet = TRUE, mode = "wb"), silent = TRUE)
+  }
+  if (!file.exists(path) || file.size(path) < 200) return(NULL)
+  gj <- tryCatch(jsonlite::fromJSON(path, simplifyVector = FALSE), error = function(e) NULL)
+  if (is.null(gj) || length(gj$features) == 0) return(NULL)
+  area <- gj$features[[1]]$properties$area_km2
+  for (i in seq_along(gj$features)) {
+    gj$features[[i]]$properties$popup <- popup_card(
+      name,
+      paste0("Watershed outline", if (!is.null(area)) paste0(" · ~", area, " km²") else "",
+             ". Delineated with the Global Watersheds API (MERIT-Hydro).")
+    )
+  }
+  gj
+}
 
 # -------------------------
 # Styling
 # -------------------------
-site_hex <- "#d95f02"
-conf_hex <- "#7570b3"
-inst_hex <- "#1b9e77"
+site_hex <- "#e2b553"
+conf_hex <- "#c98bd9"
+inst_hex <- "#6cc3b4"
+ws_hex   <- "#7fb8e0"
 
-sites <- sites %>% mutate(radius = 7)
-confs <- confs %>%
-  mutate(radius = case_when(
-    year >= 2025 ~ 8,
-    year == 2024 ~ 7,
-    year == 2023 ~ 6,
-    TRUE ~ 5
-  ))
-inst <- inst %>% mutate(radius = 8)
+# Region buttons
+fly_btn <- function(label, title, js) {
+  easyButton(icon = paste0("<span class='map-btn'>", label, "</span>"),
+             title = title, onClick = JS(paste0("function(btn, map){ ", js, " }")))
+}
 
 # -------------------------
 # Map
 # -------------------------
-m <- leaflet() %>%
-  # Recommended basemaps
+m <- leaflet(width = "100%", height = 640,
+             options = leafletOptions(worldCopyJump = TRUE, minZoom = 2)) %>%
   addProviderTiles(providers$Esri.WorldImagery, group = "Esri World Imagery") %>%
   addProviderTiles(providers$Esri.WorldTopoMap,  group = "Esri World Topo") %>%
   addProviderTiles(providers$OpenTopoMap,        group = "Open Topography") %>%
   addProviderTiles(providers$CartoDB.Positron,   group = "CartoDB Positron") %>%
-  
-
-  # Hillshade overlay
   addProviderTiles(
-    providers$Esri.WorldShadedRelief,
-    group = "Hillshade",
+    providers$Esri.WorldShadedRelief, group = "Hillshade",
     options = providerTileOptions(opacity = 0.55)
   ) %>%
+  setView(lng = -20, lat = 15, zoom = 2)
 
-  fitBounds(lng1 = -123.5, lat1 = -34.5, lng2 = 19.5, lat2 = 39) %>%
+# Watershed polygons (drawn first so markers sit on top)
+for (i in seq_len(nrow(watersheds))) {
+  gj <- with(watersheds[i, ], read_watershed(name, file, outlet_lat, outlet_lng))
+  if (!is.null(gj)) {
+    m <- m %>% addGeoJSON(gj, group = "Watersheds", color = ws_hex, weight = 1.5,
+                          opacity = 0.9, fillColor = ws_hex, fillOpacity = 0.12)
+  }
+}
 
-  # Research Sites
+m <- m %>%
   addCircleMarkers(
-    data = sites,
-    lng = ~lng, lat = ~lat,
-    popup = ~popup,
-    label = ~name,
-    radius = ~radius,
-    stroke = TRUE, color = site_hex, weight = 2,
-    fillColor = site_hex, fillOpacity = 0.85,
-    group = "Research Sites"
+    data = sites, lng = ~lng, lat = ~lat, popup = ~popup, label = ~name,
+    radius = ~radius, stroke = TRUE, color = "#0d1714", weight = 1.5,
+    fillColor = site_hex, fillOpacity = 0.95, group = "Research Sites"
   ) %>%
-
-  # Conference Travel
   addCircleMarkers(
-    data = confs,
-    lng = ~lng, lat = ~lat,
-    popup = ~popup,
-    label = ~name,
-    radius = ~radius,
-    stroke = TRUE, color = conf_hex, weight = 2,
-    fillColor = conf_hex, fillOpacity = 0.85,
-    group = "Conference Travel"
+    data = confs, lng = ~lng, lat = ~lat, popup = ~popup, label = ~name,
+    radius = ~radius, stroke = TRUE, color = "#0d1714", weight = 1.5,
+    fillColor = conf_hex, fillOpacity = 0.9, group = "Conference Travel"
   ) %>%
-
-  # Home Institution
   addCircleMarkers(
-    data = inst,
-    lng = ~lng, lat = ~lat,
-    popup = ~popup,
-    label = ~name,
-    radius = ~radius,
-    stroke = TRUE, color = inst_hex, weight = 2,
-    fillColor = inst_hex, fillOpacity = 0.90,
-    group = "Home Institution"
+    data = inst, lng = ~lng, lat = ~lat, popup = ~popup, label = ~name,
+    radius = ~radius, stroke = TRUE, color = "#0d1714", weight = 1.5,
+    fillColor = inst_hex, fillOpacity = 0.95, group = "Institutions"
   ) %>%
-
+  addEasyButtonBar(
+    fly_btn("World", "Show everything", "map.flyTo([15, -20], 2);"),
+    fly_btn("CA", "California field sites",
+            "map.flyToBounds([[36.7, -123.7], [39.5, -119.9]]);"),
+    fly_btn("W. Cape", "Western Cape, South Africa",
+            "map.flyToBounds([[-34.4, 17.9], [-32.6, 19.6]]);")
+  ) %>%
   addLayersControl(
     baseGroups = c(
       "Esri World Imagery",
@@ -128,27 +189,19 @@ m <- leaflet() %>%
       "Open Topography",
       "CartoDB Positron"
     ),
-    overlayGroups = c(
-      "Hillshade",
-      "Research Sites",
-      "Conference Travel",
-      "Home Institution"
-    ),
+    overlayGroups = c("Hillshade", "Watersheds", "Research Sites",
+                      "Conference Travel", "Institutions"),
     options = layersControlOptions(collapsed = FALSE)
   ) %>%
-
-  addScaleBar(position = "bottomleft") %>%
   addMiniMap(toggleDisplay = TRUE) %>%
-
+  addScaleBar(position = "bottomleft") %>%
   addLegend(
     position = "bottomleft",
-    colors = c(site_hex, conf_hex, inst_hex),
-    labels = c("Research Sites", "Conference Travel", "Home Institution (UC Merced)"),
-    title = "Legend",
+    colors = c(site_hex, conf_hex, inst_hex, ws_hex),
+    labels = c("Research sites", "Conference travel", "Institutions", "Watersheds"),
     opacity = 1
   )
 
 m
-
 ```
 :::

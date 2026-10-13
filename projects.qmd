@@ -1,18 +1,26 @@
 ---
 title: "Research"
+subtitle: "How landscape structure shapes biodiversity, from vernal pools to river networks."
+title-block-banner: imgs/web/banner-research.jpg
 body-classes: page-research
 ---
-::: researchcontainer
-My research asks how spatial structure shapes biodiversity across landscapes. I integrate remote sensing, field ecology, and computational methods to quantify the links between geomorphology, hydrology, and biological communities in dynamic systems such as wetlands and river networks. By combining emerging technologies—UAV-LiDAR, airborne and satellite imagery, environmental DNA, and open-source geospatial tools—I aim to develop scalable, reproducible approaches for understanding and monitoring ecological change.
+
+::: {.researchcontainer .lead-card}
+My research asks how spatial structure shapes biodiversity across landscapes. I integrate remote sensing, field ecology, and computational methods to quantify the links between geomorphology, hydrology, and biological communities in dynamic systems such as wetlands and rivers. By combining emerging technologies—UAV-LiDAR, airborne and satellite imagery, environmental DNA, and open source geospatial tools—I aim to develop scalable, reproducible approaches for understanding and monitoring ecological change.
+
+I am currently a Postdoctoral Scholar at eDNA Explorer Inc. and a Visiting Scientist at the University of California, Santa Cruz. The projects below span my doctoral research at University of California, Merced and ongoing collaborations.
 :::
-## Dissertation Research Projects
 
-::: researchcontainer
-### Ch. 1: Hydrologically informed estimation of plant species richness in vernal pools using UAV-LiDAR
+## Doctoral Research · UC Merced
 
-::: {.columns .v-center}
+:::::: researchcontainer
+[Dissertation Ch. 1 · 37.24°N 120.37°W]{.eyebrow}
+
+### Hydrologically informed estimation of plant species richness in vernal pools using UAV-LiDAR {#vernal-pools}
+
+::::: {.columns .v-center}
 ::: {.column width="40%"}
-![Merced Vernal Pools and Grasslands Reserve in full bloom (April 2024), one of California’s largest remaining intact vernal pool landscapes and a globally significant hotspot of endemic wetland biodiversity.](imgs/vernal_pool.png){width="100%"}
+![Merced Vernal Pools and Grasslands Reserve in full bloom (April 2024), one of California’s largest remaining intact vernal pool landscapes and a globally significant hotspot of endemic wetland biodiversity.](imgs/web/vernal_pool.jpg){width="100%"}
 :::
 
 ::: {.column width="60%"}
@@ -20,13 +28,15 @@ Hydrology strongly structures plant communities in wetlands, but its effects are
 
 To address this challenge, I used drone-mounted LiDAR to generate high-resolution (1 m) digital elevation models over vernal pool complexes and derived hydrologic proxies related to hydroperiod, connectivity, and soil moisture. These variables were used to model total plant species richness, as well as forb and grass richness. The resulting models predicted richness within 2--3 species, highlighting the potential of drone-based LiDAR to fill monitoring gaps where intensive field surveys are impractical.
 :::
-:::
-:::
+:::::
+::::::
 
-::: researchcontainer
-### Ch. 2: Biodiversity monitoring on floodplain ecosystems using remote sensing and multi-locus metabarcoding
+:::::: researchcontainer
+[Dissertation Ch. 2 · 37.57°N 121.18°W]{.eyebrow}
 
-::: {.columns .v-center}
+### Biodiversity monitoring on floodplain ecosystems using remote sensing and multi-locus metabarcoding {#floodplains}
+
+::::: {.columns .v-center}
 ::: {.column width="60%"}
 Groundwater regulation in California's San Joaquin Valley is expected to result in the fallowing of up to 500,000 acres of agricultural land, creating substantial land-use change with uncertain ecological consequences. While hydrologic and economic impacts have been widely studied, biodiversity responses remain poorly understood, particularly where fallowed lands intersect remnant or restored riparian habitats.
 
@@ -34,17 +44,19 @@ Working with collaborators at UC Santa Cruz and UC Merced, I combine remote sens
 :::
 
 ::: {.column width="40%"}
-![As part of my work on floodplains, I collected water quality and eDNA data for the [PNNL's](https://www.pnnl.gov) [WHONDRS consortium](https://www.pnnl.gov/projects/WHONDRS). This picture is of a sample collection at the Grayson Riverbend Preserve on the San Joaquin River, CA.](imgs/JN_sampling.jpg){width="100%"}
+![As part of my work on floodplains, I collected water quality and eDNA data for the [PNNL's](https://www.pnnl.gov) [WHONDRS consortium](https://www.pnnl.gov/projects/WHONDRS). This picture is of a sample collection at the Grayson Riverbend Preserve on the San Joaquin River, CA.](imgs/web/jn_sampling.jpg){width="100%"}
 :::
-:::
-:::
+:::::
+::::::
 
-::: researchcontainer
-### Ch. 3: OpenRES: A QGIS plugin for automated extraction of hydrogeomorphic features to support functional process zone classification of river networks
+:::::: researchcontainer
+[Dissertation Ch. 3 · 33.98°S 18.95°E]{.eyebrow}
 
-::: {.columns .v-center}
+### OpenRES: A QGIS plugin for automated extraction of hydrogeomorphic features to support functional process zone classification of river networks {#openres}
+
+::::: {.columns .v-center}
 ::: {.column width="40%"}
-![3D representation of a river valley in the Eerste River watershed (South Africa), showing the river channel (blue) and valley floor and microshed boundaries used by OpenRES for hydrogeomorphic classification.](imgs/Eerste.png){width="100%"}
+![3D representation of a river valley in the Eerste River watershed (South Africa), showing the river channel (blue) and valley floor and microshed boundaries used by OpenRES for hydrogeomorphic classification.](imgs/web/eerste.jpg){width="100%"}
 :::
 
 ::: {.column width="60%"}
@@ -52,17 +64,17 @@ Functional process zones (FPZs) --- hydrogeomorphic units defined at valley-to-r
 
 Despite their utility, FPZs remain underused due to reliance on outdated or unsupported spatial tools and the lack of open-source alternatives. To address this gap, I have developed [OpenRES](https://github.com/jollygoodjacob/OpenRES), an open-source QGIS plugin that automates extraction of hydrogeomorphic metrics from remote sensing data and supports classification of river segments into FPZs. This tool underpins key components of my dissertation research and supports collaborative work with the BioSCape campaign.
 :::
-:::
-:::
-
-
+:::::
+::::::
 
 ## Collaborations and Other Projects
 
-::: researchcontainer
-### NASA BioSCape Campaign: Biodiversity Across Scales
+:::::: researchcontainer
+[NASA BioSCape · 33.99°S 18.86°E]{.eyebrow}
 
-::: {.columns .v-center}
+### BioSCape: Biodiversity across scales {#bioscape}
+
+::::: {.columns .v-center}
 ::: {.column width="60%"}
 I am working with collaborators from the University of Colorado Boulder and the University of California, Santa Cruz on a project within NASA's first biodiversity-focused airborne observation campaign (BioSCape). This work examines phylogenetic, taxonomic, and functional biodiversity across connected freshwater--marine watersheds along the Berg and Eerste Rivers in South Africa's Greater Cape Floristic Region.
 
@@ -70,17 +82,21 @@ Our goal is to improve biodiversity mapping by clarifying how functional diversi
 :::
 
 ::: {.column width="40%"}
-![Benthic macroinvertebrate inventory collection within the headwaters of the Berg River, Jonkershoek Nature Reserve, South Africa. This image was taken by Jeremy Shelton of Fishwater Films for an upcoming documentary on NASA's Biodiversity Survey of the Cape (BioSCape) campaign.](imgs/Berg_SA_macroinverts.JPG){width="100%"}
+![Benthic macroinvertebrate inventory collection within the headwaters of the Berg River, Jonkershoek Nature Reserve, South Africa. This image was taken by Jeremy Shelton of Fishwater Films for an upcoming documentary on NASA's Biodiversity Survey of the Cape (BioSCape) campaign.](imgs/web/berg_macroinverts.jpg){width="100%"}
 :::
-:::
-:::
+:::::
+::::::
 
-::: researchcontainer
-### Internet of Things for Precison Agriculture (US NSF IoT4Ag): Sensor fusion for precision agriculture applications
+:::::: researchcontainer
+[NSF IoT4Ag Engineering Research Center]{.eyebrow}
 
-::: {.columns .v-center}
+### Sensor fusion for precision agriculture {#iot4ag}
+
+[Internet of Things for Precision Agriculture (US NSF IoT4Ag)]{.project-title}
+
+::::: {.columns .v-center}
 ::: {.column width="40%"}
-![Calibration of a drone-based imaging spectrometer (Headwall Hyperspec-Nano mounted to a DJI M600) for a summer field campaign over the IoT4Ag pistachio orchard testbed in 2022.](imgs/Hestir_field_research_20210608-19.jpg){width="100%"}
+![Calibration of a drone-based imaging spectrometer (Headwall Hyperspec-Nano mounted to a DJI M600) for a summer field campaign over the IoT4Ag pistachio orchard testbed in 2022.](imgs/web/drone_calibration.jpg){width="100%"}
 :::
 
 ::: {.column width="60%"}
@@ -88,5 +104,5 @@ Precision agriculture requires timely, spatially detailed estimates of key varia
 
 To overcome these limitations, I have been developing sensor fusion approaches that combine information from satellites, drones, and aircraft. In particular, I used classified drone imagery as training data for machine-learning models to estimate fractional vegetation cover from Planet CubeSat imagery. This work was published as a conference proceeding at IGARSS 2023, and is now being extended by members of the Earth Observation and Remote Sensing Lab in collaboration with the IoT4Ag Engineering Research Center.
 :::
-:::
-:::
+:::::
+::::::

@@ -1,0 +1,14 @@
+---
+title: "Publications"
+subtitle: "Peer-reviewed articles and conference proceedings."
+title-block-banner: imgs/web/banner-publications.jpg
+toc: false
+#bibliography: scholar.bib
+#csl: ieee.csl
+#nocite: |
+#  @*
+---
+
+::: {.researchcontainer .lead-card}
+For a complete and up-to-date list, see my [Google Scholar profile](https://scholar.google.com/citations?user=krk3qVYAAAAJ&hl=en)
+:::

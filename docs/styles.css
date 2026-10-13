@@ -1,76 +1,323 @@
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* =========================================================
+   Landscape theme — layout & components
+   Colors/fonts live in theme.scss; these mirror them for CSS.
+   ========================================================= */
+:root {
+  --forest-900: #0d1714;
+  --forest-800: #13221d;
+  --forest-700: #1c3029;
+  --mist: #e4ebe7;
+  --lichen: #a8bab2;
+  --river: #6cc3b4;
+  --fynbos: #e2b553;
+  --card: rgba(19, 34, 29, 0.78);
+  --card-border: rgba(228, 235, 231, 0.10);
+  --radius: 16px;
 }
 
+/* ---------- Page canvas: deep forest + faint topographic contours ---------- */
+body {
+  background-color: var(--forest-900);
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(108, 195, 180, 0.08), transparent 55%),
+    url("imgs/web/contours.svg");
+  background-size: auto, 1600px auto;
+  background-attachment: fixed;
+  background-repeat: no-repeat, repeat;
+}
+
+/* ---------- Navbar: glass over the banner ---------- */
+#quarto-header .navbar {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--card-border);
+}
+.navbar-brand .navbar-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.navbar .nav-link {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+.navbar .nav-link.active { color: var(--fynbos) !important; }
+
+/* ---------- Photo banners (title-block-banner in each page's YAML) ---------- */
+.quarto-title-banner {
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover !important;
+  background-position: center !important;
+  margin-bottom: 2rem;
+  padding-bottom: 2.25rem !important;
+}
+.quarto-title-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(13, 23, 20, 0.15) 0%,
+      rgba(13, 23, 20, 0.35) 55%,
+      var(--forest-900) 100%);
+  pointer-events: none;
+}
+.quarto-title-banner .quarto-title { position: relative; z-index: 1; }
+.quarto-title-banner .title {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+  margin-bottom: 0.25rem;
+}
+.quarto-title-banner .subtitle {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.1rem;
+  color: var(--mist);
+  max-width: 46rem;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+}
+/* map-style coordinate label */
+.eyebrow {
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fynbos);
+}
+
+/* ---------- Content cards ---------- */
 .researchcontainer {
-  animation: fadeIn 2.5s ease-in-out;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  margin: 0 0 1.75rem 0;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: rise 0.7s ease-out both;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .researchcontainer { animation: none; }
 }
 
-.banner {
-  width: 100%;
-  height: 300px; /* adjust height */
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 1.5em;
-  border-radius: 5px;
+.researchcontainer h3 {
+  margin-top: 0.35rem;
+  font-size: 1.45rem;
+  line-height: 1.25;
 }
-
+.researchcontainer .project-title {
+  display: block;
+  color: var(--lichen);
+  font-style: italic;
+  font-size: 0.95rem;
+  margin: -0.25rem 0 1rem 0;
+}
 .researchcontainer img {
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
-
 .researchcontainer .columns {
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-  column-gap: 2rem;        /* horizontal space between text & image */
+  margin-top: 0.75rem;
+  column-gap: 2rem;
+}
+.researchcontainer .column { padding: 0 0.25rem; }
+.researchcontainer .figure-caption,
+.researchcontainer figcaption {
+  color: var(--lichen);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin-top: 0.6rem;
+}
+.researchcontainer > p:last-child { margin-bottom: 0; }
+
+/* Intro lead paragraph */
+.lead-card { font-size: 1.08rem; }
+.lead-card p { color: var(--mist); }
+
+/* Section headings between cards */
+main.content > h2,
+main.content section.level2 > h2 {
+  font-size: 1.05rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fynbos);
+  border-bottom: none;
+  margin: 2.75rem 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+main.content > h2::after,
+main.content section.level2 > h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(226, 181, 83, 0.5), transparent);
 }
 
-
-.researchcontainer .column {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
-/* Base background behavior for ALL pages that use page-* classes */
-body[class*="page-"] {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed; /* optional; remove on mobile if janky */
-}
-
-/* Strong black gradient overlay + per-page image */
+/* ---------- Home page ---------- */
 body.page-about {
   background-image:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("imgs/backgrounds/about.jpg");
+    linear-gradient(180deg,
+      rgba(13, 23, 20, 0.30) 0%,
+      rgba(13, 23, 20, 0.55) 45%,
+      rgba(13, 23, 20, 0.92) 100%),
+    url("imgs/web/bg-about.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.page-about .about-entity .about-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+.page-about .about-entity .about-image {
+  border: 3px solid rgba(226, 181, 83, 0.75);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+.page-about .about-links {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.page-about .about-link {
+  width: auto !important;
+  margin: 0 !important;
+  border-radius: 999px !important;
+  background: rgba(13, 23, 20, 0.55);
+  border: 1px solid rgba(228, 235, 231, 0.25) !important;
+  color: var(--mist) !important;
+  padding: 0.35rem 0.9rem !important;
+  font-size: 0.9rem;
+  transition: border-color .2s, color .2s;
+}
+.page-about .about-link:hover {
+  border-color: var(--fynbos) !important;
+  color: var(--fynbos) !important;
+}
+.page-about .about-contents { border-left: none !important; }
+
+.roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1.5rem 0;
+}
+.role {
+  border: 1px solid var(--card-border);
+  border-left: 3px solid var(--river);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  background: rgba(13, 23, 20, 0.45);
+  line-height: 1.4;
+}
+.role p { margin: 0; }
+.role strong { color: #fff; }
+.role .org { color: var(--lichen); font-size: 0.92rem; }
+
+.question {
+  border-left: 3px solid var(--fynbos);
+  padding: 0.25rem 0 0.25rem 1rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.2rem;
+  color: #fff;
 }
 
-body.page-research {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("imgs/backgrounds/research.jpg");
+/* ---------- Footer & TOC ---------- */
+.nav-footer {
+  border-top: 1px solid var(--card-border);
+  font-size: 0.85rem;
+}
+#TOC, nav#TOC {
+  font-size: 0.85rem;
 }
 
-body.page-map {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("imgs/backgrounds/map.jpg");
+/* ---------- References (Publications page) ---------- */
+#refs .csl-entry {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.9rem;
 }
 
-body.page-teaching {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("imgs/backgrounds/teaching.jpg");
+/* ---------- Small screens ---------- */
+@media (max-width: 767.98px) {
+  body, body.page-about { background-attachment: scroll; background-repeat: no-repeat; }
+  body.page-about { background-size: 100% auto, cover; background-position: top center; }
+  .page-about .about-links { flex-direction: row !important; }
+  .page-about .about-link { flex: 0 0 auto; }
+  .researchcontainer .columns { display: block; }
+  .researchcontainer .column { width: 100% !important; margin-bottom: 1rem; }
+  .researchcontainer img { max-height: 340px; width: auto !important; max-width: 100%; margin: 0 auto; display: block; }
+  main.content > h2, main.content section.level2 > h2 { font-size: 0.88rem; }
+  .quarto-title-banner { min-height: 34vh; }
+  .researchcontainer { padding: 1.25rem 1.1rem; border-radius: 12px; }
+  .page-about .about-entity .about-image { width: 12em !important; height: 12em !important; }
 }
 
-/* Quarto main content container — selectors vary slightly by theme */
-main.content {
-  background: rgba(0,0,0,0.2);
-  border-radius: 18px;
-  padding: 1.25rem 1.25rem;
+/* ---------- Interactive map ---------- */
+.page-map .leaflet-container {
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  margin-top: 1rem;
+  font-family: "IBM Plex Sans", sans-serif;
 }
+.page-map .easy-button-button { background: rgba(13, 23, 20, 0.88) !important; }
+.page-map .leaflet-control-layers,
+.page-map .info.legend { color: #1b2420; }
 
-/* If you use dark text on light cards, this works great with the black gradient */
+/* Region buttons */
+.page-map .easy-button-button { width: auto !important; min-width: 30px; padding: 0 8px; }
+.page-map .easy-button-button .button-state { display: inline; }
+.page-map .map-btn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--mist);
+  white-space: nowrap;
+}
+.page-map .easy-button-button:hover .map-btn { color: var(--fynbos); }
+
+/* Popups */
+.page-map .leaflet-popup-content-wrapper,
+.page-map .leaflet-popup-tip {
+  background: var(--forest-800);
+  color: var(--mist);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+.page-map .leaflet-popup-content { margin: 12px 14px; }
+.map-pop { width: 230px; }
+.map-pop img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.map-pop-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.map-pop-desc { font-size: 0.85rem; line-height: 1.4; color: var(--lichen); }
+.map-pop-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--river) !important;
+}

@@ -1,16 +1,22 @@
 project:
   type: website
   output-dir: docs
-resources:
+  resources:
     - files/CV_Nesslage.pdf
+    - imgs/web/contours.svg
+    - imgs/web/bg-about.jpg
+
 website:
-  title: "Jacob Nesslage"
+  title: "Jacob Nesslage, Ph.D."
+  description: "Postdoctoral Scholar"
+  site-url: https://jollygoodjacob.github.io
+  favicon: imgs/web/favicon.png
   navbar:
-    background: "#256A99" # aquatic blue navbar
-    foreground: "#FFFFFF"
     left:
       - text: "Research"
         href: projects.qmd
+      - text: "Publications"
+        href: publications.qmd
       - text: "Teaching"
         href: teaching.qmd
       - text: "Interactive Map"
@@ -18,20 +24,16 @@ website:
       - text: "Curriculum Vitae"
         href: files/CV_Nesslage.pdf
   page-footer:
-    background: "#256A99"
-    foreground: "#FFFFFF"
-    left:  "© 2026, Jacob Nesslage"
+    left: "© 2026, Jacob Nesslage"
     right: Built using [GitHub](https://github.com/jollygoodjacob), [R](https://www.r-project.org/), and [Quarto](https://quarto.org/).
-
-      
 
 format:
   html:
-    bibliography: scholar.bib
-    theme: cyborg
+    theme: [cyborg, theme.scss]
     css: styles.css
     toc: true
-
+    toc-title: "On this page"
+    toc-depth: 3
+    link-external-newwindow: true
 
 editor: visual
-

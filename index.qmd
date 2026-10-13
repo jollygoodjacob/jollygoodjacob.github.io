@@ -1,12 +1,12 @@
 ---
-title: "Jacob Nesslage"
-image: imgs/Site_photo.jpg
+title: "Jacob Nesslage, Ph.D."
+image: imgs/web/profile.jpg
 toc: false
 body-classes: page-about
-about: 
+about:
   template: trestles
   image-shape: round
-  image-width: 19em
+  image-width: 17em
   links:
     - icon: linkedin
       text: LinkedIn
@@ -14,8 +14,9 @@ about:
     - icon: github
       text: GitHub
       href: https://github.com/jollygoodjacob
-    - text: ✉️ Email
-      href: mailto:jnesslage@ucmerced.edu
+    - icon: envelope
+      text: Email
+      href: mailto:jacob@ednaexplorer.org
     - icon: person-badge
       text: ORCID
       href: https://orcid.org/0000-0001-9219-8365
@@ -24,22 +25,26 @@ about:
       href: https://scholar.google.com/citations?user=krk3qVYAAAAJ&hl=en
 ---
 
-::: researchcontainer
-## About Me
+:::::: researchcontainer
+## Affilitations
 
-I’m a **Ph.D. Candidate** in the **Environmental Systems Graduate Group** at the **University of California, Merced**. I conduct research in the Earth Observation and Remote Sensing (EORS) Lab (PI: Dr. Erin Hestir). 
-
-My background is in **environmental engineering**, **spatial ecology**, and **remote sensing**.
-
-I am interested in how landscape structure organizes biodiversity. Using remote sensing, GIS, and spatial modeling, I link hydrology and geomorphology to ecological patterns across dynamic ecosystems.
-
-I am particularly drawn to dynamic ecosystems that occur at the terrestrial-aquatic interface, such as floodplains, river corridors, and ephemeral wetlands, where small changes in elevation or connectivity can reorganize entire communities. These systems demand tools that operate across scales, from microtopography measured by drone-based LiDAR to watershed scale classification of river networks.
-
-More broadly, I am motivated by a central question:
-How can we observe ecological change at the spatial and temporal scales at which it actually occurs?
-
-
+::::: roles
+::: role
+**Postdoctoral Scholar**\
+[eDNA Explorer Inc.]{.org}
 :::
 
+::: role
+**Visiting Scientist**\
+[University of California, Santa Cruz]{.org}
+:::
+:::::
 
+## About Me
 
+I'm a **Postdoctoral Scholar** at **eDNA Explorer Inc.** and a **Visiting Scientist** at the **University of California, Santa Cruz**. I work where geospatial data and environmental DNA meet, with the goal of making biodiversity monitoring more scalable, reproducible, and useful for decision making.
+
+My research asks how landscape structure organizes biodiversity, and how we can measure it. I combine **eDNA metabarcoding** with **drone, airborne, and satellite remote sensing** and **spatial modeling** to link hydrology and geomorphology to the communities that live in a landscape. Much of this work focuses on the terrestrial–aquatic interface, such as vernal pools, floodplains, and river networks, where small changes in elevation or connectivity can reorganize entire communities.
+
+In 2026, I completed my Ph.D. in the **Environmental Systems Graduate Group** at the **University of California, Merced**, in the Earth Observation and Remote Sensing (EORS) Lab (PI: Dr. Erin Hestir). My dissertation used drone-mounted LiDAR to predict plant species richness in vernal pools, paired eDNA metabarcoding with remote sensing to assess biodiversity across floodplains and riverscapes, and produced [OpenRES](https://github.com/jollygoodjacob/OpenRES), an open-source QGIS plugin for classifying river networks into functional process zones. I also contributed to NASA's **BioSCape** campaign in South Africa's Greater Cape Floristic Region, which integrates airborne remote sensing with field and eDNA biodiversity data, and developed methods that fuse drone and satellite imagery.
+::::::
